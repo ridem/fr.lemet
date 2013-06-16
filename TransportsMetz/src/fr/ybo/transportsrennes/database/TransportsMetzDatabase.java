@@ -41,14 +41,14 @@ import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.database.modele.AlertBdd;
 import fr.ybo.transportsrennes.keolis.ConstantesKeolis;
 
-public class TransportsRennesDatabase extends DataBaseHelper {
+public class TransportsMetzDatabase extends DataBaseHelper {
 
     private static final String DATABASE_NAME = "keolis.db";
 	private static final int DATABASE_VERSION = 18;
 
     private Context context;
 
-    public TransportsRennesDatabase(Context context) {
+    public TransportsMetzDatabase(Context context) {
         super(context, ConstantesKeolis.LIST_CLASSES_DATABASE, DATABASE_NAME, DATABASE_VERSION);
         this.context = context;
     }

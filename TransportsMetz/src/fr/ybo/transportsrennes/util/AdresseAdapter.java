@@ -29,7 +29,7 @@ import com.google.code.geocoder.model.GeocoderStatus;
 
 import fr.ybo.transportscommun.donnees.modele.Arret;
 import fr.ybo.transportscommun.util.StringOperation;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class AdresseAdapter extends ArrayAdapter<String> {
 
@@ -56,10 +56,10 @@ public class AdresseAdapter extends ArrayAdapter<String> {
             FilterResults fr = new FilterResults();
             if (constraint != null && constraint.length() > 5) {
                 GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress(constraint.toString())
-                        .setLanguage("fr").setBounds(TransportsRennesApplication.getBounds()).getGeocoderRequest();
+                        .setLanguage("fr").setBounds(TransportsMetzApplication.getBounds()).getGeocoderRequest();
                 GeocodeResponse reponseResult = null;
                 try {
-                    reponseResult = TransportsRennesApplication.getGeocodeUtil().geocode(geocoderRequest);
+                    reponseResult = TransportsMetzApplication.getGeocodeUtil().geocode(geocoderRequest);
                 } catch (Exception ignore) {
                 }
 

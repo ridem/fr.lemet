@@ -32,7 +32,7 @@ import fr.ybo.transportscommun.donnees.modele.DetailArretConteneur;
 import fr.ybo.transportscommun.donnees.modele.Horaire;
 import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class FavoriAdapter extends BaseAdapter {
 
@@ -100,9 +100,9 @@ public class FavoriAdapter extends BaseAdapter {
         } else {
             holder = (FavoriAdapter.ViewHolder) convertView1.getTag();
         }
-		holder.arret.setTextColor(TransportsRennesApplication.getTextColor(myContext));
-		holder.direction.setTextColor(TransportsRennesApplication.getTextColor(myContext));
-		holder.tempsRestant.setTextColor(TransportsRennesApplication.getTextColor(myContext));
+		holder.arret.setTextColor(TransportsMetzApplication.getTextColor(myContext));
+		holder.direction.setTextColor(TransportsMetzApplication.getTextColor(myContext));
+		holder.tempsRestant.setTextColor(TransportsMetzApplication.getTextColor(myContext));
 
         final ArretFavori favori = favoris.get(position);
 
@@ -124,7 +124,7 @@ public class FavoriAdapter extends BaseAdapter {
                         whereArgs.add(favoris.get(position).ligneId);
                         whereArgs.add(Integer.toString(favoris.get(position).macroDirection));
                         String whereClause = "arretId = :arretId and ligneId = :ligneId and macroDirection = :macroDirection";
-                        TransportsRennesApplication.getDataBaseHelper().getWritableDatabase()
+                        TransportsMetzApplication.getDataBaseHelper().getWritableDatabase()
                                 .update("ArretFavori", contentValues, whereClause, whereArgs.toArray(new String[3]));
                         favoris.get(autrePosition).ordre = autrePosition;
                         contentValues.put("ordre", autrePosition);
@@ -132,7 +132,7 @@ public class FavoriAdapter extends BaseAdapter {
                         whereArgs.add(favoris.get(autrePosition).arretId);
                         whereArgs.add(favoris.get(autrePosition).ligneId);
                         whereArgs.add(Integer.toString(favoris.get(autrePosition).macroDirection));
-                        TransportsRennesApplication.getDataBaseHelper().getWritableDatabase()
+                        TransportsMetzApplication.getDataBaseHelper().getWritableDatabase()
                                 .update("ArretFavori", contentValues, whereClause, whereArgs.toArray(new String[3]));
                         notifyDataSetChanged();
                     }
@@ -158,7 +158,7 @@ public class FavoriAdapter extends BaseAdapter {
                         whereArgs.add(favoris.get(position).ligneId);
                         whereArgs.add(Integer.toString(favoris.get(position).macroDirection));
                         String whereClause = "arretId = :arretId and ligneId = :ligneId and macroDirection = :macroDirection";
-                        TransportsRennesApplication.getDataBaseHelper().getWritableDatabase()
+                        TransportsMetzApplication.getDataBaseHelper().getWritableDatabase()
                                 .update("ArretFavori", contentValues, whereClause, whereArgs.toArray(new String[3]));
                         favoris.get(autrePosition).ordre = autrePosition;
                         contentValues.put("ordre", autrePosition);
@@ -166,7 +166,7 @@ public class FavoriAdapter extends BaseAdapter {
                         whereArgs.add(favoris.get(autrePosition).arretId);
                         whereArgs.add(favoris.get(autrePosition).ligneId);
                         whereArgs.add(Integer.toString(favoris.get(autrePosition).macroDirection));
-                        TransportsRennesApplication.getDataBaseHelper().getWritableDatabase()
+                        TransportsMetzApplication.getDataBaseHelper().getWritableDatabase()
                                 .update("ArretFavori", contentValues, whereClause, whereArgs.toArray(new String[3]));
                         notifyDataSetChanged();
                     }

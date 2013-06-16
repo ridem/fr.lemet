@@ -38,7 +38,7 @@ import fr.ybo.transportscommun.donnees.modele.ArretFavori;
 import fr.ybo.transportscommun.donnees.modele.DernierMiseAJour;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.adapters.widget.FavoriAdapterForWidget1;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class TransportsWidget21Configure extends CapptainListActivity {
 
@@ -64,12 +64,12 @@ public class TransportsWidget21Configure extends CapptainListActivity {
 
         setContentView(R.layout.configurewidget11);
 
-        if (TransportsRennesApplication.getDataBaseHelper().selectSingle(new DernierMiseAJour()) == null) {
+        if (TransportsMetzApplication.getDataBaseHelper().selectSingle(new DernierMiseAJour()) == null) {
             Toast.makeText(this, getString(R.string.erreur_widgetBeforeLaunch), Toast.LENGTH_LONG).show();
             finish();
             return;
         }
-        favoris = TransportsRennesApplication.getDataBaseHelper().select(new ArretFavori());
+        favoris = TransportsMetzApplication.getDataBaseHelper().select(new ArretFavori());
         if (favoris.isEmpty()) {
             Toast.makeText(this, getString(R.string.erreur_widgetWithNoFavori), Toast.LENGTH_LONG).show();
             finish();

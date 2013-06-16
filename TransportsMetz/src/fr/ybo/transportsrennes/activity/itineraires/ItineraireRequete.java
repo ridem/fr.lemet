@@ -70,11 +70,11 @@ import fr.ybo.transportscommun.util.LocationUtil.UpdateLocationListenner;
 import fr.ybo.transportscommun.util.LogYbo;
 import fr.ybo.transportscommun.util.StringOperation;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.itineraires.ItineraireReponse;
 import fr.ybo.transportsrennes.util.AdresseAdapter;
 import fr.ybo.transportsrennes.util.CalculItineraires;
-import fr.ybo.transportsrennes.util.TransportsRennesException;
+import fr.ybo.transportsrennes.util.TransportsMetzException;
 
 @SuppressLint({ "DefaultLocale", "SimpleDateFormat" })
 public class ItineraireRequete extends BaseSimpleActivity implements UpdateLocationListenner {
@@ -119,11 +119,11 @@ public class ItineraireRequete extends BaseSimpleActivity implements UpdateLocat
         AutoCompleteTextView adresseDepart = (AutoCompleteTextView) findViewById(R.id.adresseDepart);
 		AdresseAdapter adapterDepart = new AdresseAdapter(this, arrets);
         adresseDepart.setAdapter(adapterDepart);
-		adresseDepart.setTextColor(TransportsRennesApplication.getTextColor(this));
+		adresseDepart.setTextColor(TransportsMetzApplication.getTextColor(this));
         AutoCompleteTextView adresseArrivee = (AutoCompleteTextView) findViewById(R.id.adresseArrivee);
 		AdresseAdapter adapterArrivee = new AdresseAdapter(this, arrets);
         adresseArrivee.setAdapter(adapterArrivee);
-		adresseArrivee.setTextColor(TransportsRennesApplication.getTextColor(this));
+		adresseArrivee.setTextColor(TransportsMetzApplication.getTextColor(this));
         adresseArrivee.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -186,7 +186,7 @@ public class ItineraireRequete extends BaseSimpleActivity implements UpdateLocat
 		arrets.clear();
 
 		Map<String, Arret> mapArrets = new HashMap<String, Arret>();
-		for (Arret arret : TransportsRennesApplication.getDataBaseHelper().selectAll(Arret.class)) {
+		for (Arret arret : TransportsMetzApplication.getDataBaseHelper().selectAll(Arret.class)) {
 			arret.nom = StringOperation.sansAccents(arret.nom.toUpperCase());
 			if (!mapArrets.containsKey(arret.nom)) {
 				mapArrets.put(arret.nom, arret);
@@ -257,8 +257,8 @@ public class ItineraireRequete extends BaseSimpleActivity implements UpdateLocat
 					if (reponseDepart == null) {
 						GeocoderRequest geocoderRequest =
 								new GeocoderRequestBuilder().setAddress(adresseDepart).setLanguage("fr")
-										.setBounds(TransportsRennesApplication.getBounds()).getGeocoderRequest();
-						reponseDepart = TransportsRennesApplication.getGeocodeUtil().geocode(geocoderRequest);
+										.setBounds(TransportsMetzApplication.getBounds()).getGeocoderRequest();
+						reponseDepart = TransportsMetzApplication.getGeocodeUtil().geocode(geocoderRequest);
 						if (reponseDepart != null && reponseDepart.getStatus() == GeocoderStatus.OVER_QUERY_LIMIT) {
 							erreurQuota = true;
 						} else if (reponseDepart == null || reponseDepart.getStatus() != GeocoderStatus.OK) {
@@ -285,8 +285,8 @@ public class ItineraireRequete extends BaseSimpleActivity implements UpdateLocat
 					if (reponseArrivee == null) {
 						GeocoderRequest geocoderRequest =
 								new GeocoderRequestBuilder().setAddress(adresseArrivee).setLanguage("fr")
-										.setBounds(TransportsRennesApplication.getBounds()).getGeocoderRequest();
-						reponseArrivee = TransportsRennesApplication.getGeocodeUtil().geocode(geocoderRequest);
+										.setBounds(TransportsMetzApplication.getBounds()).getGeocoderRequest();
+						reponseArrivee = TransportsMetzApplication.getGeocodeUtil().geocode(geocoderRequest);
 						if (reponseArrivee != null && reponseArrivee.getStatus() == GeocoderStatus.OVER_QUERY_LIMIT) {
 							erreurQuota = true;
 						} else if (reponseArrivee == null || reponseArrivee.getStatus() != GeocoderStatus.OK) {
@@ -426,7 +426,7 @@ public class ItineraireRequete extends BaseSimpleActivity implements UpdateLocat
                             || e.getCause() instanceof SocketTimeoutException || e.getCause() instanceof JsonParseException)) {
                         return null;
                     } else {
-                        throw new TransportsRennesException(e);
+                        throw new TransportsMetzException(e);
                     }
                 }
             }

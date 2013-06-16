@@ -42,7 +42,7 @@ import fr.ybo.transportscommun.util.LogYbo;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.alerts.ListAlertsForOneLine;
 import fr.ybo.transportsrennes.adapters.bus.DetailArretAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.keolis.Keolis;
 import fr.ybo.transportsrennes.keolis.modele.bus.Departure;
 import fr.ybo.transportsrennes.keolis.modele.bus.ResultDeparture;
@@ -134,7 +134,7 @@ public class DetailArret extends AbstractDetailArret implements Refreshable {
 		
 		if (horaires.isEmpty()) {
 			String maxCalendrier = "00000000";
-			for (Calendrier calendrier : TransportsRennesApplication.getDataBaseHelper().selectAll(Calendrier.class)) {
+			for (Calendrier calendrier : TransportsMetzApplication.getDataBaseHelper().selectAll(Calendrier.class)) {
 				if (calendrier.dateFin != null && calendrier.dateFin.compareTo(maxCalendrier) > 0) {
 					maxCalendrier = calendrier.dateFin;
 				}

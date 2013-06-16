@@ -75,7 +75,7 @@ public class Version {
                 PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
                 version = info.versionName;
             } catch (PackageManager.NameNotFoundException exception) {
-                throw new TransportsRennesException(exception);
+                throw new TransportsMetzException(exception);
             }
         }
         return version;

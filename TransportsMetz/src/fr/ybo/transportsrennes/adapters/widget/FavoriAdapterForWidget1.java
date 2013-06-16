@@ -26,7 +26,7 @@ import android.widget.TextView;
 import fr.ybo.transportscommun.donnees.modele.ArretFavori;
 import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class FavoriAdapterForWidget1 extends BaseAdapter {
 
@@ -92,8 +92,8 @@ public class FavoriAdapterForWidget1 extends BaseAdapter {
             holder = (FavoriAdapterForWidget1.ViewHolder) convertView1.getTag();
         }
 
-		holder.arret.setTextColor(TransportsRennesApplication.getTextColor(mContext));
-		holder.direction.setTextColor(TransportsRennesApplication.getTextColor(mContext));
+		holder.arret.setTextColor(TransportsMetzApplication.getTextColor(mContext));
+		holder.direction.setTextColor(TransportsMetzApplication.getTextColor(mContext));
 
         ArretFavori favori = favoris.get(position);
 

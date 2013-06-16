@@ -26,7 +26,7 @@ import fr.ybo.transportscommun.donnees.modele.Ligne;
 import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.adapters.bus.LigneAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 /**
  * Activité affichant les lignes de bus..
@@ -36,7 +36,7 @@ import fr.ybo.transportsrennes.application.TransportsRennesApplication;
 public class BusShortcutPicker extends BaseListActivity {
 
     private void constructionListe() {
-        List<Ligne> lignes = TransportsRennesApplication.getDataBaseHelper().select(new Ligne(), "ordre");
+        List<Ligne> lignes = TransportsMetzApplication.getDataBaseHelper().select(new Ligne(), "ordre");
         setListAdapter(new LigneAdapter(this, lignes));
         ListView lv = getListView();
         lv.setFastScrollEnabled(true);

@@ -25,7 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import fr.ybo.transportscommun.util.Formatteur;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.keolis.modele.velos.Station;
 
 /**
@@ -75,8 +75,8 @@ public class VeloAdapter extends ArrayAdapter<Station> {
         } else {
             holder = (VeloAdapter.ViewHolder) convertView1.getTag();
         }
-		holder.dispoVeloStation.setTextColor(TransportsRennesApplication.getTextColor(getContext()));
-		holder.dispoVeloDistance.setTextColor(TransportsRennesApplication.getTextColor(getContext()));
+		holder.dispoVeloStation.setTextColor(TransportsMetzApplication.getTextColor(getContext()));
+		holder.dispoVeloDistance.setTextColor(TransportsMetzApplication.getTextColor(getContext()));
         Station station = stations.get(position);
         int placesTotales = station.bikesavailable + station.slotsavailable;
         double poucentageDispo = (double) station.bikesavailable / (double) placesTotales;

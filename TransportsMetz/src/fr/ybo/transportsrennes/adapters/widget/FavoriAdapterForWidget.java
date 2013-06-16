@@ -25,11 +25,11 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import fr.ybo.transportscommun.donnees.modele.ArretFavori;
 import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class FavoriAdapterForWidget extends BaseAdapter {
 
@@ -105,8 +105,8 @@ public class FavoriAdapterForWidget extends BaseAdapter {
             holder = (FavoriAdapterForWidget.ViewHolder) convertView1.getTag();
         }
 
-		holder.arret.setTextColor(TransportsRennesApplication.getTextColor(mContext));
-		holder.direction.setTextColor(TransportsRennesApplication.getTextColor(mContext));
+		holder.arret.setTextColor(TransportsMetzApplication.getTextColor(mContext));
+		holder.direction.setTextColor(TransportsMetzApplication.getTextColor(mContext));
 
         ArretFavori favori = favoris.get(position);
 

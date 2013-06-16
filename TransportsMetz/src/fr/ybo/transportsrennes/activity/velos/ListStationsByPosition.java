@@ -46,7 +46,7 @@ import fr.ybo.transportscommun.util.LocationUtil.UpdateLocationListenner;
 import fr.ybo.transportscommun.util.TacheAvecProgressDialog;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.adapters.velos.VeloAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.keolis.Keolis;
 import fr.ybo.transportsrennes.keolis.modele.velos.Station;
 
@@ -226,7 +226,7 @@ public class ListStationsByPosition extends BaseListActivity implements UpdateLo
 			Station station = (Station) getListAdapter().getItem(info.position);
 			VeloFavori veloFavori = new VeloFavori();
 			veloFavori.number = station.number;
-			veloFavori = TransportsRennesApplication.getDataBaseHelper().selectSingle(veloFavori);
+			veloFavori = TransportsMetzApplication.getDataBaseHelper().selectSingle(veloFavori);
 			menu.setHeaderTitle(Formatteur.formatterChaine(station.name));
 			menu.add(Menu.NONE, veloFavori == null ? R.id.ajoutFavori : R.id.supprimerFavori, 0,
 					veloFavori == null ? getString(R.string.ajouterFavori) : getString(R.string.suprimerFavori));
@@ -243,13 +243,13 @@ public class ListStationsByPosition extends BaseListActivity implements UpdateLo
 				station = (Station) getListAdapter().getItem(info.position);
 				veloFavori = new VeloFavori();
 				veloFavori.number = station.number;
-				TransportsRennesApplication.getDataBaseHelper().insert(veloFavori);
+				TransportsMetzApplication.getDataBaseHelper().insert(veloFavori);
 				return true;
 			case R.id.supprimerFavori:
 				station = (Station) getListAdapter().getItem(info.position);
 				veloFavori = new VeloFavori();
 				veloFavori.number = station.number;
-				TransportsRennesApplication.getDataBaseHelper().delete(veloFavori);
+				TransportsMetzApplication.getDataBaseHelper().delete(veloFavori);
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);

@@ -29,7 +29,7 @@ import fr.ybo.transportscommun.donnees.manager.gtfs.GestionZipKeolis;
 import fr.ybo.transportscommun.donnees.modele.DernierMiseAJour;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.loading.LoadingActivity;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.fragments.bus.ListFavoris;
 
 public class TabFavoris extends AbstractTabFavoris {
@@ -42,7 +42,7 @@ public class TabFavoris extends AbstractTabFavoris {
 	
 
 	private void verifierUpgrade() {
-		DataBaseHelper dataBaseHelper = TransportsRennesApplication.getDataBaseHelper();
+		DataBaseHelper dataBaseHelper = TransportsMetzApplication.getDataBaseHelper();
 		DernierMiseAJour dernierMiseAJour = null;
 		try {
 			dernierMiseAJour = dataBaseHelper.selectSingle(new DernierMiseAJour());

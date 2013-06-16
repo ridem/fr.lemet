@@ -38,7 +38,7 @@ import fr.ybo.transportscommun.util.Formatteur;
 import fr.ybo.transportscommun.util.TacheAvecProgressDialog;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.adapters.velos.VeloAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.keolis.Keolis;
 import fr.ybo.transportsrennes.keolis.modele.velos.Station;
 
@@ -84,7 +84,7 @@ public class ListStationsFavoris extends BaseListActivity implements Refreshable
 		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogRequeteVeloStar), true) {
             @Override
             protected void myDoBackground() throws ErreurReseau {
-                List<VeloFavori> velosFavoris = TransportsRennesApplication.getDataBaseHelper()
+                List<VeloFavori> velosFavoris = TransportsMetzApplication.getDataBaseHelper()
                         .select(new VeloFavori());
                 Collection<String> numbers = new ArrayList<String>(10);
                 for (VeloFavori favori : velosFavoris) {
@@ -120,7 +120,7 @@ public class ListStationsFavoris extends BaseListActivity implements Refreshable
 		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogRequeteVeloStar), true) {
 			@Override
 			protected void myDoBackground() throws ErreurReseau {
-				List<VeloFavori> velosFavoris = TransportsRennesApplication.getDataBaseHelper()
+				List<VeloFavori> velosFavoris = TransportsMetzApplication.getDataBaseHelper()
 						.select(new VeloFavori());
 				Collection<String> numbers = new ArrayList<String>(10);
 				for (VeloFavori favori : velosFavoris) {
@@ -172,7 +172,7 @@ public class ListStationsFavoris extends BaseListActivity implements Refreshable
                 station = (Station) getListAdapter().getItem(info.position);
                 veloFavori = new VeloFavori();
                 veloFavori.number = station.number;
-                TransportsRennesApplication.getDataBaseHelper().delete(veloFavori);
+                TransportsMetzApplication.getDataBaseHelper().delete(veloFavori);
                 ((VeloAdapter) getListAdapter()).getStations().remove(station);
                 ((BaseAdapter) getListAdapter()).notifyDataSetChanged();
                 return true;

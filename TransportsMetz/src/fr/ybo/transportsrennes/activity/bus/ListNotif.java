@@ -32,7 +32,7 @@ import fr.ybo.transportscommun.util.UpdateTimeUtil;
 import fr.ybo.transportscommun.util.UpdateTimeUtil.UpdateTime;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.adapters.bus.NotifAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 /**
  * @author ybonnel
@@ -46,7 +46,7 @@ public class ListNotif extends BaseListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listnotif);
 		getActivityHelper().setupActionBar(R.menu.default_menu_items, R.menu.holo_default_menu_items);
-        setListAdapter(new NotifAdapter(getApplicationContext(), TransportsRennesApplication.getDataBaseHelper().selectAll(Notification.class)));
+        setListAdapter(new NotifAdapter(getApplicationContext(), TransportsMetzApplication.getDataBaseHelper().selectAll(Notification.class)));
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Notification notification = (Notification) adapterView.getItemAtPosition(i);
@@ -109,9 +109,9 @@ public class ListNotif extends BaseListActivity {
         switch (item.getItemId()) {
             case R.id.supprimerNotif:
                 Notification notification = (Notification) getListAdapter().getItem(info.position);
-                TransportsRennesApplication.getDataBaseHelper().delete(notification);
+                TransportsMetzApplication.getDataBaseHelper().delete(notification);
                 ((NotifAdapter) getListAdapter()).getNotifications().clear();
-                ((NotifAdapter) getListAdapter()).getNotifications().addAll(TransportsRennesApplication.getDataBaseHelper().selectAll(Notification.class));
+                ((NotifAdapter) getListAdapter()).getNotifications().addAll(TransportsMetzApplication.getDataBaseHelper().selectAll(Notification.class));
                 ((BaseAdapter) getListAdapter()).notifyDataSetChanged();
                 return true;
             default:

@@ -41,7 +41,7 @@ import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.bus.DetailArret;
 import fr.ybo.transportsrennes.activity.commun.OnClickFavoriGestionnaire;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 /**
  * Adapteur pour les arrêts.
@@ -121,7 +121,7 @@ public class ArretAdapter extends CursorAdapter {
         holder.nomArret.setText(name);
         holder.directionArret.setText(context.getString(R.string.vers) + ' ' + direction);
         holder.isFavori.setImageResource(
-                TransportsRennesApplication.getDataBaseHelper().selectSingle(favori) == null ? android.R.drawable.btn_star_big_off :
+                TransportsMetzApplication.getDataBaseHelper().selectSingle(favori) == null ? android.R.drawable.btn_star_big_off :
                         android.R.drawable.btn_star_big_on);
         holder.isFavori.setOnClickListener(new OnClickFavoriGestionnaire(ligne, favori.arretId, name, direction,
                 activity, favori.macroDirection));
@@ -185,7 +185,7 @@ public class ArretAdapter extends CursorAdapter {
             /* Recuperation de l'arretCourant */
             Arret arretCourant = new Arret();
             arretCourant.id = arretId;
-            arretCourant = TransportsRennesApplication.getDataBaseHelper().selectSingle(arretCourant);
+            arretCourant = TransportsMetzApplication.getDataBaseHelper().selectSingle(arretCourant);
             Location locationArret = new Location("myProvider");
             locationArret.setLatitude(arretCourant.latitude);
             locationArret.setLongitude(arretCourant.longitude);
@@ -211,7 +211,7 @@ public class ArretAdapter extends CursorAdapter {
             selectionArgs.add(String.valueOf(minLongitude));
             selectionArgs.add(String.valueOf(maxLongitude));
 
-            Cursor cursor = TransportsRennesApplication.getDataBaseHelper().executeSelectQuery(requete.toString(), selectionArgs);
+            Cursor cursor = TransportsMetzApplication.getDataBaseHelper().executeSelectQuery(requete.toString(), selectionArgs);
 
             /** Recuperation des index dans le cussor */
             int arretIdIndex = cursor.getColumnIndex("arretId");

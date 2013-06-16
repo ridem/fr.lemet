@@ -19,7 +19,7 @@ package fr.ybo.transportsrennes.activity.preferences;
 import fr.ybo.transportscommun.activity.preferences.AbstractPreferences;
 import fr.ybo.transportsrennes.R;
 
-public class PreferencesRennes extends AbstractPreferences {
+public class PreferencesMetz extends AbstractPreferences {
 
 	@Override
 	protected int getXmlPreferences() {

@@ -33,7 +33,7 @@ import fr.ybo.transportscommun.donnees.modele.DernierMiseAJour;
 import fr.ybo.transportscommun.donnees.modele.GroupeFavori;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.loading.LoadingActivity;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 /**
  * @author ybonnel
@@ -102,13 +102,13 @@ public class ListFavorisForNoGroup extends BaseFragmentActivity {
 					}
 					GroupeFavori groupeFavori = new GroupeFavori();
 					groupeFavori.name = value;
-					if (!TransportsRennesApplication.getDataBaseHelper().select(groupeFavori).isEmpty()
+					if (!TransportsMetzApplication.getDataBaseHelper().select(groupeFavori).isEmpty()
 							|| value.equals(getString(R.string.all))) {
 						Toast.makeText(ListFavorisForNoGroup.this, getString(R.string.groupeExistant),
 								Toast.LENGTH_LONG).show();
 						return;
 					}
-					TransportsRennesApplication.getDataBaseHelper().insert(groupeFavori);
+					TransportsMetzApplication.getDataBaseHelper().insert(groupeFavori);
 					startActivity(new Intent(ListFavorisForNoGroup.this, TabFavoris.class));
 					ListFavorisForNoGroup.this.finish();
 				}
@@ -145,7 +145,7 @@ public class ListFavorisForNoGroup extends BaseFragmentActivity {
 	
 
 	private void verifierUpgrade() {
-		DataBaseHelper dataBaseHelper = TransportsRennesApplication.getDataBaseHelper();
+		DataBaseHelper dataBaseHelper = TransportsMetzApplication.getDataBaseHelper();
 		DernierMiseAJour dernierMiseAJour = null;
 		try {
 			dernierMiseAJour = dataBaseHelper.selectSingle(new DernierMiseAJour());

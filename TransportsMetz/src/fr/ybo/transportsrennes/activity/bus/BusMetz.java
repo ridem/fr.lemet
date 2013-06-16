@@ -25,17 +25,17 @@ import fr.ybo.transportscommun.activity.commun.BaseActivity.BaseListActivity;
 import fr.ybo.transportscommun.donnees.modele.Ligne;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.adapters.bus.LigneAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 /**
  * Activité affichant les lignes de bus..
  *
  * @author ybonnel
  */
-public class BusRennes extends BaseListActivity {
+public class BusMetz extends BaseListActivity {
 
     private void constructionListe() {
-        List<Ligne> lignes = TransportsRennesApplication.getDataBaseHelper().select(new Ligne(), "ordre");
+        List<Ligne> lignes = TransportsMetzApplication.getDataBaseHelper().select(new Ligne(), "ordre");
         setListAdapter(new LigneAdapter(this, lignes));
         ListView lv = getListView();
         lv.setFastScrollEnabled(true);
@@ -43,7 +43,7 @@ public class BusRennes extends BaseListActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Serializable ligne = (Serializable) adapterView.getItemAtPosition(position);
-                Intent intent = new Intent(BusRennes.this, ListArret.class);
+                Intent intent = new Intent(BusMetz.this, ListArret.class);
                 intent.putExtra("ligne", ligne);
                 startActivity(intent);
             }

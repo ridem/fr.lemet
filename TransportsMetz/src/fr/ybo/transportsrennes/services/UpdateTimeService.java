@@ -43,7 +43,7 @@ import fr.ybo.transportsrennes.activity.widgets.TransportsWidget21Configure;
 import fr.ybo.transportsrennes.activity.widgets.TransportsWidgetConfigure;
 import fr.ybo.transportsrennes.activity.widgets.TransportsWidgetLowRes;
 import fr.ybo.transportsrennes.activity.widgets.TransportsWidgetLowResConfigure;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class UpdateTimeService extends Service {
 
@@ -141,15 +141,15 @@ public class UpdateTimeService extends Service {
             int now = calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE);
             notifSelect.setHeure(now);
             LOG_YBO.debug("Recherche des notif pour " + now);
-            for (Notification notification : TransportsRennesApplication.getDataBaseHelper().select(notifSelect)) {
+            for (Notification notification : TransportsMetzApplication.getDataBaseHelper().select(notifSelect)) {
                 createNotification(notification);
             }
             notifSelect.setHeure(now - 1);
-            for (Notification notification : TransportsRennesApplication.getDataBaseHelper().select(notifSelect)) {
+            for (Notification notification : TransportsMetzApplication.getDataBaseHelper().select(notifSelect)) {
                 createNotification(notification);
             }
             notifSelect.setHeure(now - 2);
-            for (Notification notification : TransportsRennesApplication.getDataBaseHelper().select(notifSelect)) {
+            for (Notification notification : TransportsMetzApplication.getDataBaseHelper().select(notifSelect)) {
                 createNotification(notification);
             }
         } catch (Exception ignore) {
@@ -180,7 +180,7 @@ public class UpdateTimeService extends Service {
         NotificationManager mNotificationManager = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(notification.getHeure(), notif);
-        TransportsRennesApplication.getDataBaseHelper().delete(notification);
+        TransportsMetzApplication.getDataBaseHelper().delete(notification);
     }
 
     /**

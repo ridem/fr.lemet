@@ -47,12 +47,12 @@ import fr.ybo.transportscommun.donnees.manager.gtfs.CoupleResourceFichier;
 import fr.ybo.transportscommun.donnees.modele.Bounds;
 import fr.ybo.transportscommun.util.ErreurReseau;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.activity.TransportsRennes;
+import fr.ybo.transportsrennes.activity.TransportsMetz;
 import fr.ybo.transportsrennes.activity.bus.DetailArret;
 import fr.ybo.transportsrennes.activity.bus.TabFavoris;
-import fr.ybo.transportsrennes.activity.preferences.PreferencesRennes;
+import fr.ybo.transportsrennes.activity.preferences.PreferencesMetz;
 import fr.ybo.transportsrennes.activity.velos.ListStationsFavoris;
-import fr.ybo.transportsrennes.database.TransportsRennesDatabase;
+import fr.ybo.transportsrennes.database.TransportsMetzDatabase;
 import fr.ybo.transportsrennes.database.modele.AlertBdd;
 import fr.ybo.transportsrennes.keolis.Keolis;
 import fr.ybo.transportsrennes.keolis.modele.bus.Alert;
@@ -65,7 +65,7 @@ import fr.ybo.transportsrennes.util.CalculItineraires;
  * l'application.
  */
 @SuppressLint("SimpleDateFormat")
-public class TransportsRennesApplication extends AbstractTransportsApplication {
+public class TransportsMetzApplication extends AbstractTransportsApplication {
 
 	@Override
 	protected void initDonneesSpecifiques() {
@@ -99,7 +99,7 @@ public class TransportsRennesApplication extends AbstractTransportsApplication {
 	}
 
 	public void constructDatabase() {
-		databaseHelper = new TransportsRennesDatabase(this);
+		databaseHelper = new TransportsMetzDatabase(this);
 	}
 
 	public void postCreate() {
@@ -193,7 +193,7 @@ public class TransportsRennesApplication extends AbstractTransportsApplication {
 	}
 
 	public Class<? extends AccueilActivity> getAccueilActivity() {
-		return TransportsRennes.class;
+		return TransportsMetz.class;
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item, Activity activity, ActivityHelper helper) {
@@ -210,7 +210,7 @@ public class TransportsRennesApplication extends AbstractTransportsApplication {
 				activity.startActivity(new Intent(activity, ListStationsFavoris.class));
 				return true;
 			case R.id.menu_prefs:
-				activity.startActivity(new Intent(activity, PreferencesRennes.class));
+				activity.startActivity(new Intent(activity, PreferencesMetz.class));
 				return true;
 			case R.id.menu_refresh:
 				if (activity instanceof Refreshable) {

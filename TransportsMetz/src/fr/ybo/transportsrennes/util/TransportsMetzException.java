@@ -16,22 +16,22 @@
  */
 package fr.ybo.transportsrennes.util;
 
-public class TransportsRennesException extends RuntimeException {
+public class TransportsMetzException extends RuntimeException {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public TransportsRennesException(String detailMessage, Throwable throwable) {
+	public TransportsMetzException(String detailMessage, Throwable throwable) {
 		super(detailMessage, throwable);
 	}
 
-	public TransportsRennesException(String detailMessage) {
+	public TransportsMetzException(String detailMessage) {
 		super(detailMessage);
 	}
 
-	public TransportsRennesException(Throwable throwable) {
+	public TransportsMetzException(Throwable throwable) {
 		super(throwable);
 	}
 

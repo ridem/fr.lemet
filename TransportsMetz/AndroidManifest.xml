@@ -29,9 +29,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     
     <application android:icon="@drawable/icon" android:label="@string/app_name"
-                 android:debuggable="false" android:name=".application.TransportsRennesApplication"
+                 android:debuggable="true" android:name=".application.TransportsMetzApplication"
                  android:theme="@style/Theme.Transports">
-        <activity android:name=".activity.TransportsRennes"
+        <activity android:name=".activity.TransportsMetz"
                   android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.loading.LoadingActivity" android:configChanges="orientation|keyboardHidden"/>
-        <activity android:name=".activity.bus.BusRennes" android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name=".activity.bus.BusMetz" android:configChanges="orientation|keyboardHidden"/>
         <activity android:name=".activity.alerts.ListAlertsForOneLine" android:configChanges="orientation|keyboardHidden">
         </activity>
         <activity android:name=".activity.alerts.DetailAlert" android:configChanges="orientation|keyboardHidden">
@@ -107,7 +107,7 @@
                   android:configChanges="orientation|keyboardHidden"/>
         <activity android:name=".activity.itineraires.Itineraires" android:configChanges="orientation|keyboardHidden"/>
         <activity android:name=".activity.itineraires.TrajetOnMap" android:configChanges="keyboardHidden"/>
-        <activity android:name=".activity.preferences.PreferencesRennes"
+        <activity android:name=".activity.preferences.PreferencesMetz"
                   android:configChanges="orientation|keyboardHidden"/>
         <activity android:name=".activity.bus.ListNotif" android:configChanges="orientation|keyboardHidden"/>
 
@@ -163,7 +163,7 @@
 
         <service
                 android:name=".services.UpdateTimeService"
-                android:label="TransportsRennesUpdateTimeService">
+                android:label="TransportsMetzUpdateTimeService">
 
             <intent-filter>
                 <action android:name="fr.ybo.transportsrennes.action.UPDATE"/>
@@ -176,7 +176,7 @@
             </intent-filter>
         </receiver>
         <receiver android:process=":remote" android:name=".util.AlarmReceiver"
-                  android:label="TransportsRennesAlarmReceiver"/>
+                  android:label="TransportsMetzAlarmReceiver"/>
         <receiver android:name=".activity.widgets.TransportsWidget" android:label="@string/widget22_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -233,7 +233,7 @@
         <meta-data android:name="capptain:reportLocation" android:value="true"/>
 
         <service android:name="com.ubikod.capptain.android.service.CapptainService"
-                 android:label="TransportsRennesService" android:process=":Capptain">
+                 android:label="TransportsMetzService" android:process=":Capptain">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <action android:name="com.ubikod.capptain.ICapptainService"/>

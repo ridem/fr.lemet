@@ -26,7 +26,7 @@ import fr.ybo.transportscommun.donnees.modele.ArretFavori;
 import fr.ybo.transportscommun.util.LogYbo;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.bus.DetailArret;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.services.UpdateTimeService;
 import fr.ybo.transportsrennes.util.WidgetUpdateUtil;
 
@@ -69,13 +69,13 @@ public class TransportsWidget extends AppWidgetProvider {
             LOG_YBO.debug("Pas de favoris trouvés dans la conf.");
             return;
         }
-        if (TransportsRennesApplication.getDataBaseHelper() == null) {
+        if (TransportsMetzApplication.getDataBaseHelper() == null) {
             return;
         }
         ArrayList<ArretFavori> favorisBdd = new ArrayList<ArretFavori>(favorisSelects.size());
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_arrets);
         for (ArretFavori favoriSelect : favorisSelects) {
-            ArretFavori favoriBdd = TransportsRennesApplication.getDataBaseHelper().selectSingle(favoriSelect);
+            ArretFavori favoriBdd = TransportsMetzApplication.getDataBaseHelper().selectSingle(favoriSelect);
             if (favoriBdd == null) {
                 LOG_YBO.debug("FavoriBdd null");
                 return;
@@ -110,7 +110,7 @@ public class TransportsWidget extends AppWidgetProvider {
                 ArretFavori favori = new ArretFavori();
                 favori.arretId = champs[1];
                 favori.ligneId = champs[2];
-                favori = TransportsRennesApplication.getDataBaseHelper().selectSingle(favori);
+                favori = TransportsMetzApplication.getDataBaseHelper().selectSingle(favori);
                 if (favori != null) {
                     Intent startIntent = new Intent(context, DetailArret.class);
                     startIntent.putExtra("favori", favori);

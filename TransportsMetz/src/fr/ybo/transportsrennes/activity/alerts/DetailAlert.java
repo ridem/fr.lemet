@@ -25,7 +25,7 @@ import android.widget.TextView;
 import fr.ybo.transportscommun.activity.commun.BaseActivity.BaseSimpleActivity;
 import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.keolis.modele.bus.Alert;
 
 /**
@@ -52,7 +52,7 @@ public class DetailAlert extends BaseSimpleActivity {
             requete.append("select Arret.nom from Arret, Ligne, ArretRoute ");
             requete.append("where Ligne.nomCourt = :nomCourt and ArretRoute.ligneId = Ligne.id ");
             requete.append("and Arret.id = ArretRoute.arretId");
-            Cursor cursor = TransportsRennesApplication.getDataBaseHelper().executeSelectQuery(requete.toString(), Collections.singletonList(line));
+            Cursor cursor = TransportsMetzApplication.getDataBaseHelper().executeSelectQuery(requete.toString(), Collections.singletonList(line));
             while (cursor.moveToNext()) {
                 arretsToBold.add(cursor.getString(0));
             }

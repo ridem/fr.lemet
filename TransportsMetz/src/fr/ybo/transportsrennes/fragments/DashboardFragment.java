@@ -25,26 +25,26 @@ import android.view.ViewGroup;
 import fr.ybo.transportscommun.util.Theme;
 import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.alerts.TabAlertes;
-import fr.ybo.transportsrennes.activity.bus.BusRennes;
+import fr.ybo.transportsrennes.activity.bus.BusMetz;
 import fr.ybo.transportsrennes.activity.bus.ListArretByPosition;
 import fr.ybo.transportsrennes.activity.itineraires.ItineraireRequete;
 import fr.ybo.transportsrennes.activity.parkrelais.ListParkRelais;
 import fr.ybo.transportsrennes.activity.velos.ListStationsByPosition;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class DashboardFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View root;
-		if (TransportsRennesApplication.getTheme(getActivity()) == Theme.NOIR) {
+		if (TransportsMetzApplication.getTheme(getActivity()) == Theme.NOIR) {
 			root = inflater.inflate(R.layout.fragment_dashboard_noir, container);
 		} else {
 			root = inflater.inflate(R.layout.fragment_dashboard, container);
 		}
 		root.findViewById(R.id.home_btn_bus).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				startActivity(new Intent(getActivity(), BusRennes.class));
+				startActivity(new Intent(getActivity(), BusMetz.class));
 			}
 		});
 		root.findViewById(R.id.home_btn_bus_gps).setOnClickListener(new View.OnClickListener() {

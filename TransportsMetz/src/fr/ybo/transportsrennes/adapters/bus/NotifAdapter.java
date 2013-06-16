@@ -28,7 +28,7 @@ import fr.ybo.transportscommun.donnees.modele.Ligne;
 import fr.ybo.transportscommun.donnees.modele.Notification;
 import fr.ybo.transportscommun.util.IconeLigne;
 import fr.ybo.transportsrennes.R;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class NotifAdapter extends BaseAdapter {
 
@@ -91,9 +91,9 @@ public class NotifAdapter extends BaseAdapter {
         } else {
             holder = (NotifAdapter.ViewHolder) convertView1.getTag();
         }
-		holder.arret.setTextColor(TransportsRennesApplication.getTextColor(myContext));
-		holder.tempsRestant.setTextColor(TransportsRennesApplication.getTextColor(myContext));
-		holder.directionArret.setTextColor(TransportsRennesApplication.getTextColor(myContext));
+		holder.arret.setTextColor(TransportsMetzApplication.getTextColor(myContext));
+		holder.tempsRestant.setTextColor(TransportsMetzApplication.getTextColor(myContext));
+		holder.directionArret.setTextColor(TransportsMetzApplication.getTextColor(myContext));
 
         final Notification notification = notifications.get(position);
 

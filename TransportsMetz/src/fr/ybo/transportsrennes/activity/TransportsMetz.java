@@ -46,18 +46,18 @@ import fr.ybo.transportsrennes.R;
 import fr.ybo.transportsrennes.activity.bus.ListNotif;
 import fr.ybo.transportsrennes.activity.loading.LoadingActivity;
 import fr.ybo.transportsrennes.activity.pointsdevente.ListPointsDeVente;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 import fr.ybo.transportsrennes.keolis.KeolisException;
 import fr.ybo.transportsrennes.util.Version;
 
-public class TransportsRennes extends AccueilActivity {
+public class TransportsMetz extends AccueilActivity {
 
 	private Theme currentTheme;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		currentTheme = TransportsRennesApplication.getTheme(getApplicationContext());
+		currentTheme = TransportsMetzApplication.getTheme(getApplicationContext());
 		setContentView(R.layout.main);
 		getActivityHelper().setupActionBar(R.menu.accueil_menu_items, R.menu.holo_accueil_menu_items);
 		verifierUpgrade();
@@ -66,8 +66,8 @@ public class TransportsRennes extends AccueilActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (currentTheme != TransportsRennesApplication.getTheme(getApplicationContext())) {
-			startActivity(new Intent(this, TransportsRennes.class));
+		if (currentTheme != TransportsMetzApplication.getTheme(getApplicationContext())) {
+			startActivity(new Intent(this, TransportsMetz.class));
 			finish();
 		}
 	}
@@ -82,7 +82,7 @@ public class TransportsRennes extends AccueilActivity {
 			View view = LayoutInflater.from(this).inflate(R.layout.infoapropos, null);
 			TextView textView = (TextView) view.findViewById(R.id.textAPropos);
 			if (UIUtils.isHoneycomb()) {
-				textView.setTextColor(TransportsRennesApplication.getTextColor(this));
+				textView.setTextColor(TransportsMetzApplication.getTextColor(this));
 			}
 			Spanned spanned = Html.fromHtml(getString(R.string.dialogAPropos));
 			textView.setText(spanned, TextView.BufferType.SPANNABLE);
@@ -91,7 +91,7 @@ public class TransportsRennes extends AccueilActivity {
 			builder.setTitle(getString(R.string.titleTransportsRennes,
 					Version.getVersionCourante(getApplicationContext())));
 			builder.setCancelable(false);
-			builder.setNeutralButton(getString(R.string.Terminer), new TransportsRennes.TerminerClickListener());
+			builder.setNeutralButton(getString(R.string.Terminer), new TransportsMetz.TerminerClickListener());
 			return builder.create();
 		}
 		if (id == DIALOG_UPGRADE) {
@@ -127,7 +127,7 @@ public class TransportsRennes extends AccueilActivity {
 	}
 
 	private void verifierUpgrade() {
-		DataBaseHelper dataBaseHelper = TransportsRennesApplication.getDataBaseHelper();
+		DataBaseHelper dataBaseHelper = TransportsMetzApplication.getDataBaseHelper();
 		DernierMiseAJour dernierMiseAJour = null;
 		try {
 			dernierMiseAJour = dataBaseHelper.selectSingle(new DernierMiseAJour());

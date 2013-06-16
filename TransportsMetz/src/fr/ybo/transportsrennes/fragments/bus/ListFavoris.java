@@ -32,7 +32,7 @@ import fr.ybo.transportsrennes.activity.widgets.TransportsWidget21Configure;
 import fr.ybo.transportsrennes.activity.widgets.TransportsWidgetConfigure;
 import fr.ybo.transportsrennes.activity.widgets.TransportsWidgetLowResConfigure;
 import fr.ybo.transportsrennes.adapters.bus.FavoriAdapter;
-import fr.ybo.transportsrennes.application.TransportsRennesApplication;
+import fr.ybo.transportsrennes.application.TransportsMetzApplication;
 
 public class ListFavoris extends ListFragment {
 
@@ -72,7 +72,7 @@ public class ListFavoris extends ListFragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		if (TransportsRennesApplication.getDataBaseHelper().selectAll(GroupeFavori.class).isEmpty()) {
+		if (TransportsMetzApplication.getDataBaseHelper().selectAll(GroupeFavori.class).isEmpty()) {
 			return inflater.inflate(R.layout.fragment_favoris, container);
 		}
 		return super.onCreateView(inflater, container, savedInstanceState);
@@ -134,7 +134,7 @@ public class ListFavoris extends ListFragment {
 		if (groupe != null) {
 			favoriExemple.groupe = groupe;
 		}
-		return TransportsRennesApplication.getDataBaseHelper().select(favoriExemple, "ordre");
+		return TransportsMetzApplication.getDataBaseHelper().select(favoriExemple, "ordre");
 	}
 
 	private UpdateTimeUtil updateTimeUtil;
@@ -168,10 +168,10 @@ public class ListFavoris extends ListFragment {
 						&& TransportsWidget11Configure.isNotUsed(getActivity(), favori)
 						&& TransportsWidget21Configure.isNotUsed(getActivity(), favori)
 						&& TransportsWidgetLowResConfigure.isNotUsed(getActivity(), favori)) {
-					TransportsRennesApplication.getDataBaseHelper().delete(favori);
+					TransportsMetzApplication.getDataBaseHelper().delete(favori);
 					((FavoriAdapter) getListAdapter()).getFavoris().clear();
 					((FavoriAdapter) getListAdapter()).getFavoris().addAll(
-							TransportsRennesApplication.getDataBaseHelper().select(new ArretFavori()));
+							TransportsMetzApplication.getDataBaseHelper().select(new ArretFavori()));
 					((BaseAdapter) getListAdapter()).notifyDataSetChanged();
 				} else {
 					Toast.makeText(getActivity(), getString(R.string.favoriUsedByWidget), Toast.LENGTH_LONG).show();
@@ -181,7 +181,7 @@ public class ListFavoris extends ListFragment {
 				favori = (ArretFavori) getListAdapter().getItem(info.position);
 				final List<String> groupes = new ArrayList<String>();
 				groupes.add(getString(R.string.all));
-				for (GroupeFavori groupe : TransportsRennesApplication.getDataBaseHelper()
+				for (GroupeFavori groupe : TransportsMetzApplication.getDataBaseHelper()
 						.selectAll(GroupeFavori.class)) {
 					groupes.add(groupe.name);
 				}
@@ -190,7 +190,7 @@ public class ListFavoris extends ListFragment {
 				builder.setItems(groupes.toArray(new String[groupes.size()]), new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialogInterface, int item) {
 						favori.groupe = groupes.get(item).equals(getString(R.string.all)) ? null : groupes.get(item);
-						TransportsRennesApplication.getDataBaseHelper().update(favori);
+						TransportsMetzApplication.getDataBaseHelper().update(favori);
 						dialogInterface.dismiss();
 						startActivity(new Intent(getActivity(), TabFavoris.class));
 						getActivity().finish();
