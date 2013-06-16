@@ -22,7 +22,7 @@
     android:layout_height="fill_parent">
     <include layout="@layout/actionbar" />
 
-    <fragment android:name="fr.ybo.transportsrennes.fragments.DashboardFragment"
+    <fragment android:name="fr.lemet.application.fragments.DashboardFragment"
         android:id="@+id/fragment_dashboard"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

@@ -14,32 +14,25 @@
   -->
 <resources>
     <!-- Nom de l'application -->
-    <string name="app_name">Transports Rennes</string>
+    <string name="app_name">LeMet</string>
 
-    <string name="widget11_name">Transports Rennes 1x1</string>
-    <string name="widget21_name">Transports Rennes 2x1</string>
-    <string name="widget22_name">Transports Rennes 2x2</string>
-    <string name="widgetlowres_name">Transports Rennes 2x2 LowRes</string>
+    <string name="widget11_name">LeMet 1x1</string>
+    <string name="widget21_name">LeMets 2x1</string>
+    <string name="widget22_name">LeMet 2x2</string>
+    <string name="widgetlowres_name">LeMet 2x2 LowRes</string>
     <!-- Messages -->
-    <string name="titleTransportsRennes">Bienvenue dans l\'application Transports Rennes %1$s</string>
+    <string name="titleTransportsRennes">Bienvenue dans l\'application LeMet %1$s</string>
     <string name="majDispo">Une mise à jour des données du STAR est disponible, voulez-vous l\'effectuer maintenant?
         Attention, vous devrez charger à
         nouveau les horaires que vous avez déjà chargés.
     </string>
-    <string name="infoChargementGtfs">Chargement des données du STAR.</string>
+    <string name="infoChargementGtfs">Chargement des données LeMet.</string>
     <string name="dialogRequeteVeloStar">Interrogation du service LE vélo STAR.</string>
     <string name="dialogRequeteAlerts">Interrogation du STAR.</string>
     <string name="dialogRequeteTwitter">Interrogation de Twitter.</string>
     <string name="dialogRequeteParkRelais">Interrogation du STAR.</string>
     <string name="dialogRequetePointsDeVente">Interrogation du STAR.</string>
-    <string name="dialogAPropos">Transports Rennes : application "Rennes Métropole en accès libre", sources des données
-        : Data Keolis Rennes (&lt;a
-        href=\'http://data.keolis-rennes.com\'&gt;data.keolis-rennes.com&lt;/a&gt;).&lt;br/&gt;Cette application est
-        développée et maintenue par une seule personne sur du temps personnel, merci donc de votre indulgence.&lt;br/&gt;N\'hésitez
-        pas à m\'envoyer
-        toute suggestion ou problème(&lt;a href=\'mailto:ybonnel@gmail.com?subject=Transports Rennes\'&gt;ybonnel@gmail.com&lt;/a&gt;).&lt;br/&gt;
-        L\'icône de l\'application a gracieusement été réalisée par &lt;a href=\'http://twitter.com/gregbzh35\'&gt;@gregbzh35&lt;/a&gt;.&lt;br/&gt;
-        Analytics, real-time monitoring and communications provided by Capptain (&lt;a href=\'http://www.capptain.com\'&gt;www.capptain.com&lt;/a&gt;).
+    <string name="dialogAPropos">LeMet, préversion. <br /> <u>Supélec</u>
     </string>
     <string name="detailarret_empty">Pas de bus à la date sélectionnée, vous pouvez changer de date dans la bar d\'actions</string>
     <string name="itineraires_empty">Aucun itinéraire n\'a été trouvé pour ces adresses.</string>

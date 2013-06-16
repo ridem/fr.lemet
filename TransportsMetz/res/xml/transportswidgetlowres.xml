@@ -19,6 +19,6 @@
     android:minWidth="148dp"
     android:minHeight="148dp"
     android:initialLayout="@layout/widget_arrets_low_res"
-    android:configure="fr.ybo.transportsrennes.activity.widgets.TransportsWidgetLowResConfigure" android:updatePeriodMillis="0"
+    android:configure="fr.lemet.application.activity.widgets.TransportsWidgetLowResConfigure" android:updatePeriodMillis="0"
     android:previewImage="@drawable/appercu_widget_low_res">
 </appwidget-provider>
