@@ -175,17 +175,16 @@ public class GetAndContructZip {
 	/**
 	 * Répertoire Data issue de la variable d'environnement YBO_DEV_DATA.
 	 */
-	private static final String YBO_DEV_DATA = System.getenv("YBO_DEV_DATA");
+	//private static final String YBO_DEV_DATA = System.getenv("YBO_DEV_DATA");
 	/**
 	 * Répertoire des datas par défaut.
 	 */
-	private static final String YBO_DEV_DATA_DEFAULT = "/Users/ybonnel/dev/data";
+	private static final String YBO_DEV_DATA_DEFAULT = "/home/ridem/AndroidStudioProjects/";
 
 	/**
 	 * Répertoire de travail.
 	 */
-	private static final String REPERTOIRE_SORTIE = (YBO_DEV_DATA == null ? YBO_DEV_DATA_DEFAULT : YBO_DEV_DATA)
-			+ "/GTFSRennes";
+	private static final String REPERTOIRE_SORTIE = YBO_DEV_DATA_DEFAULT + "/GTFSMetz";
 	/**
 	 * Répertoire des fichiers gtfs.
 	 */
@@ -201,11 +200,11 @@ public class GetAndContructZip {
 	 */
 	public void getZipKeolis() {
 		try {
-			Date lastUpdate = dateDemandee == null ? getLastUpdate() : SDF.parse(dateDemandee);
-			System.out.println("Date du fichier : " + SDF.format(lastUpdate));
-			HttpURLConnection connection = openHttpConnection(lastUpdate);
-			ZipInputStream zipInputStream = new ZipInputStream(connection.getInputStream());
-			//ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream("C:/ybonnel/GTFS-20110118.zip"));
+			//Date lastUpdate = dateDemandee == null ? getLastUpdate() : SDF.parse(dateDemandee);
+			//System.out.println("Date du fichier : " + SDF.format(lastUpdate));
+			//HttpURLConnection connection = openHttpConnection(lastUpdate);
+			//ZipInputStream zipInputStream = new ZipInputStream(connection.getInputStream());
+			ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream("/home/ridem/gtfs.zip"));
 			try {
 				File repertoire = new File(REPERTOIRE_GTFS);
 				if (repertoire.exists()) {

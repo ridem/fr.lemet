@@ -15,10 +15,15 @@ package fr.ybo.transportsrenneshelper;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.print.DocFlavor;
 
 import fr.ybo.moteurcsv.MoteurCsv;
 import fr.ybo.transportsrenneshelper.generateurmodele.Generateur;
@@ -42,7 +47,7 @@ import fr.ybo.transportsrenneshelper.util.GetAndContructZip;
  */
 public final class Main {
 
-	private static final boolean OPTIMIZE_CALENDARS = true;
+	private static final boolean OPTIMIZE_CALENDARS = false;
 
 	/**
 	 * Constructeur privé pour empécher l'instanciation.
@@ -59,7 +64,7 @@ public final class Main {
 	 *             problème d'entrée/sortie.
 	 */
 	public static void main(String[] args) throws IOException {
-		genereGtfs(true, OPTIMIZE_CALENDARS, "20130503");
+		genereGtfs(false, OPTIMIZE_CALENDARS, "20130503");
 		// genereParcoursBus("20120912");
 	}
 
@@ -261,12 +266,11 @@ public final class Main {
 		List<Class<?>> clazz = new ArrayList<Class<?>>();
 		clazz.add(HoraireMetro.class);
 		MoteurCsv moteurMetro = new MoteurCsv(clazz);
-		List<StopTime> horairesMetro = new ArrayList<StopTime>();
-		for (HoraireMetro horaireMetro : moteurMetro
-				.parseInputStream(
-						Main.class
-								.getResourceAsStream("/fr/ybo/transportsrenneshelper/gtfs/horaires_metro_semaine.txt"),
-						HoraireMetro.class)) {
+
+        List<StopTime> horairesMetro = new ArrayList<StopTime>();
+		for (HoraireMetro horaireMetro : moteurMetro.parseInputStream(
+                Main.class.getResourceAsStream("/fr/ybo/transportsrenneshelper/gtfs/horaires_metro_semaine.txt"),
+                HoraireMetro.class)) {
 			for (StopTime horaire : horaireMetro.getStopTime(tripIdMax,
 					semaineId, headSign1, headSign2)) {
 				horairesMetro.add(horaire);

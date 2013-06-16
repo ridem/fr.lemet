@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import fr.ybo.moteurcsv.MoteurCsv;
 import fr.ybo.moteurcsv.exception.MoteurCsvException;
@@ -592,7 +593,9 @@ public class Generateur {
 				}
 
 			}
-			for (Map.Entry<String, Integer> headSign : mapDirectionIds
+            Set<Entry<String, Integer>> apDirectionIds = mapDirectionIds.entrySet();
+
+            for (Map.Entry<String, Integer> headSign : mapDirectionIds
 					.entrySet()) {
 				Direction direction = new Direction();
 				direction.id = headSign.getValue();
