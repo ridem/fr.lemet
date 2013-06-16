@@ -88,8 +88,8 @@ public abstract class AbstractListParkings<T extends IParking> extends BaseListA
 		super.onCreate(savedInstanceState);
 		setContentView(getLayout());
 		setupActionBar();
-		parkingsIntent = (List<T>) (getIntent().getExtras() == null ? null : getIntent().getExtras().getSerializable(
-				"parcRelais"));
+		parkingsIntent = (List<T>) ((getIntent().getExtras() == null) ? null : getIntent().getExtras().getSerializable(
+                "parcRelais"));
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		locationUtil = new LocationUtil(this, this);
 
@@ -222,7 +222,8 @@ public abstract class AbstractListParkings<T extends IParking> extends BaseListA
 			return;
 		}
 		synchronized (parkings) {
-			List<ObjetWithDistance> listDistance = (List<ObjetWithDistance>) parkings;
+			List<ObjetWithDistance> listDistance;
+            listDistance= (List<ObjetWithDistance>) ((List) parkings);
 			for (ObjetWithDistance parking : listDistance) {
 				parking.calculDistance(location);
 			}
