@@ -219,7 +219,7 @@ public class TransportsMetz extends AccueilActivity {
 		return false;
 	}
 
-	private void copieImageIfNotExists() {
+	/*private void copieImageIfNotExists() {
 		boolean fichierExistant = false;
 		for (String nom : fileList()) {
 			if ("plan_2012_2013.jpg".equals(nom)) {
@@ -257,7 +257,7 @@ public class TransportsMetz extends AccueilActivity {
 				}
 			}
 		}
-	}
+	}*/
 
 	private void loadAllLines() {
 		Intent intent = new Intent(this, LoadingActivity.class);
