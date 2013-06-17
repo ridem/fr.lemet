@@ -46,7 +46,7 @@ import fr.lemet.application.database.modele.AlertBdd;
 import fr.lemet.application.keolis.Keolis;
 import fr.lemet.application.keolis.modele.bus.Alert;
 import fr.lemet.application.services.UpdateTimeService;
-import fr.lemet.application.util.AlarmReceiver;
+//import fr.lemet.application.util.AlarmReceiver;
 import fr.lemet.application.util.CalculItineraires;
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.DonnesSpecifiques;
@@ -78,7 +78,7 @@ public class TransportsMetzApplication extends AbstractTransportsApplication {
 
 			@Override
 			public int getCompactLogo() {
-				return R.drawable.compact_icon;
+				return R.drawable.icone_compacte;
 			}
 
 			@Override
@@ -179,18 +179,18 @@ public class TransportsMetzApplication extends AbstractTransportsApplication {
 			}
 		}.execute((Void) null);
 
-		setRecurringAlarm(this);
+		//setRecurringAlarm(this);
 	}
 
 	private static final long INTERVAL_ALARM = AlarmManager.INTERVAL_HALF_DAY;
 
-	private void setRecurringAlarm(Context context) {
+/*	private void setRecurringAlarm(Context context) {
 		Intent alarm = new Intent(context, AlarmReceiver.class);
 		PendingIntent recurringCheck = PendingIntent.getBroadcast(context, 0, alarm, PendingIntent.FLAG_CANCEL_CURRENT);
 		AlarmManager alarms = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
 		alarms.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 0, INTERVAL_ALARM, recurringCheck);
-	}
+	}*/
 
 	public Class<? extends AccueilActivity> getAccueilActivity() {
 		return TransportsMetz.class;
@@ -206,12 +206,12 @@ public class TransportsMetzApplication extends AbstractTransportsApplication {
 			case R.id.menu_bus_favoris:
 				activity.startActivity(new Intent(activity, TabFavoris.class));
 				return true;
-			case R.id.menu_velo_favoris:
-				activity.startActivity(new Intent(activity, ListStationsFavoris.class));
-				return true;
-			case R.id.menu_prefs:
-				activity.startActivity(new Intent(activity, PreferencesMetz.class));
-				return true;
+			//case R.id.menu_velo_favoris:
+			//	activity.startActivity(new Intent(activity, ListStationsFavoris.class));
+			//	return true;
+			//case R.id.menu_prefs:
+			//	activity.startActivity(new Intent(activity, PreferencesMetz.class));
+			//	return true;
 			case R.id.menu_refresh:
 				if (activity instanceof Refreshable) {
 					((Refreshable) activity).refresh();

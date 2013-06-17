@@ -22,7 +22,7 @@
     <string name="widgetlowres_name">LeMet 2x2 LowRes</string>
     <!-- Messages -->
     <string name="titleTransportsRennes">Bienvenue dans l\'application LeMet %1$s</string>
-    <string name="majDispo">Une mise à jour des données du STAR est disponible, voulez-vous l\'effectuer maintenant?
+    <string name="majDispo">Une mise à jour des données LeMet est disponible, voulez-vous l\'effectuer maintenant?
         Attention, vous devrez charger à
         nouveau les horaires que vous avez déjà chargés.
     </string>
@@ -146,10 +146,10 @@
     
     <string name="erreurTimeoNotFound">Erreur : aucun arrêt trouvé avec le code %1$s</string>
     
-    <string name="getRealTime">Récupération des horaires temps réel en cours.</string>
+    <string name="getRealTime">Récupération des horaires en cours.</string>
     
-    <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du STAR (%1$d secondes).</string>
+    <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau LeMet (%1$d secondes).</string>
     
     
-    <string name="messageStarEnRetard">Les données des horaires ne sont plus valides, soit vous n\'avez pas mis à jour l\'application, soit le STAR n\'a pas encore fournit les horaires, et je n\'ai donc pas pu les intégrer…</string>
+    <string name="messageStarEnRetard">Les données des horaires ne sont plus valides, soit vous n\'avez pas mis à jour l\'application, soit le LeMet n\'a pas encore fournit les horaires, et je n\'ai donc pas pu les intégrer…</string>
 </resources>

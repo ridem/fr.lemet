@@ -156,14 +156,14 @@ public class TransportsMetz extends AccueilActivity {
 		super.onCreateOptionsMenu(menu);
 		MenuItem item = menu.add(GROUP_ID, MENU_ID, Menu.NONE, R.string.menu_apropos);
 		item.setIcon(android.R.drawable.ic_menu_info_details);
-		MenuItem itemNotif = menu.add(GROUP_ID, MENU_NOTIF, Menu.NONE, R.string.notif);
-		itemNotif.setIcon(android.R.drawable.ic_menu_agenda);
+		//MenuItem itemNotif = menu.add(GROUP_ID, MENU_NOTIF, Menu.NONE, R.string.notif);
+		//itemNotif.setIcon(android.R.drawable.ic_menu_agenda);
 		MenuItem itemLoadLines = menu.add(GROUP_ID, MENU_LOAD_LINES, Menu.NONE, R.string.menu_loadLines);
 		itemLoadLines.setIcon(android.R.drawable.ic_menu_save);
-		MenuItem itemShare = menu.add(GROUP_ID, MENU_SHARE, Menu.NONE, R.string.menu_share);
-		itemShare.setIcon(android.R.drawable.ic_menu_share);
-		MenuItem itemPointDeVentes = menu.add(GROUP_ID, MENU_TICKETS, Menu.NONE, R.string.menu_tickets);
-		itemPointDeVentes.setIcon(R.drawable.ic_menu_tickets);
+		//MenuItem itemShare = menu.add(GROUP_ID, MENU_SHARE, Menu.NONE, R.string.menu_share);
+		//itemShare.setIcon(android.R.drawable.ic_menu_share);
+		//MenuItem itemPointDeVentes = menu.add(GROUP_ID, MENU_TICKETS, Menu.NONE, R.string.menu_tickets);
+		//itemPointDeVentes.setIcon(R.drawable.ic_menu_tickets);
 		return true;
 	}
 
@@ -174,16 +174,16 @@ public class TransportsMetz extends AccueilActivity {
 			case MENU_ID:
 				showDialog(DIALOG_A_PROPOS);
 				return true;
-			case R.id.menu_plan:
-			/*	copieImageIfNotExists();
+			/*case R.id.menu_plan:
+				copieImageIfNotExists();
 				Intent intentMap = new Intent(Intent.ACTION_VIEW);
 				intentMap.setDataAndType(Uri.fromFile(new File(getFilesDir(), "plan_2012_2013.jpg")), "image*//*");
-				startActivity(intentMap);*/
+				startActivity(intentMap);
 
 
 
 
-				return true;
+				return true;*/
 			case MENU_TICKETS:
 				Intent intentTickets = new Intent(this, ListPointsDeVente.class);
 				startActivity(intentTickets);
