@@ -122,8 +122,7 @@
     <string name="versionDisponible">La version %1$s est disponible!</string>
 
     <string name="menu_share">Partager</string>
-    <string name="shareText">Transports Rennes, l\'application Android pour vous faciliter les Transports Rennais :
-        http://goo.gl/ALKs0
+    <string name="shareText">LeMet, l\'application Android pour vous faciliter les transports à Metz !
     </string>
 
     <string name="notifUpdateOn">Notification pour les mises à jour</string>
@@ -146,7 +145,7 @@
     
     <string name="erreurTimeoNotFound">Erreur : aucun arrêt trouvé avec le code %1$s</string>
     
-    <string name="getRealTime">Récupération des horaires temps réel en cours.</string>
+    <string name="getRealTime">Récupération des horaires en cours.</string>
     
     <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau LeMet (%1$d secondes).</string>
     
