@@ -147,7 +147,8 @@ public abstract class AbstractTransportsApplication extends Application {
 	}
 
 	public static boolean hasAlert(String ligneNomCourt) {
-		return lignesWithAlerts.contains(ligneNomCourt);
+		return false;
+		//return lignesWithAlerts.contains(ligneNomCourt);
 	}
 
 	private static LatLngBounds bounds;

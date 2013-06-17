@@ -55,24 +55,25 @@ public class DashboardFragment extends Fragment {
 				startActivity(new Intent(getActivity(), ListArretByPosition.class));
 			}
 		});
-		root.findViewById(R.id.home_btn_alert).setOnClickListener(new View.OnClickListener() {
+		/*root.findViewById(R.id.home_btn_alert).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				startActivity(new Intent(getActivity(), TabAlertes.class));
 			}
-		});
+		}); */
 		root.findViewById(R.id.home_btn_carte).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				startActivity(new Intent(getActivity(), PlanReseau.class));
 			}
 		});
-		root.findViewById(R.id.home_btn_parking).setOnClickListener(new View.OnClickListener() {
+		/*root.findViewById(R.id.home_btn_parking).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				startActivity(new Intent(getActivity(), ListParkRelais.class));
 			}
-		});
+		}); */
 		root.findViewById(R.id.home_btn_itineraires).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				startActivity(new Intent(getActivity(), ItineraireRequete.class));
+				//startActivity(new Intent(getActivity(), ItineraireRequete.class));
+
 			}
 		});
 		return root;

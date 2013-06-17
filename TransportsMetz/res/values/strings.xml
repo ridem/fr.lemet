@@ -41,7 +41,7 @@
     <string name="go_googlemap">Visualiser sur GoogleMap</string>
     <string name="textAdresseDepart">Départ</string>
     <string name="textAdresseArrivee">Destination</string>
-    <string name="exempleAdresse">Ex : place sainte anne, Rennes</string>
+    <string name="exempleAdresse">Ex : Place Saint Jacques, Metz</string>
     <string name="hint_rechercheParcRelai">Recherche de Parcs Relais</string>
     <string name="hint_recherchePointDeVente">Recherche de Points de vente</string>
     <string name="hint_rechercheStation">Recherche de stations</string>
@@ -146,7 +146,7 @@
     
     <string name="erreurTimeoNotFound">Erreur : aucun arrêt trouvé avec le code %1$s</string>
     
-    <string name="getRealTime">Récupération des horaires en cours.</string>
+    <string name="getRealTime">Récupération des horaires temps réel en cours.</string>
     
     <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau LeMet (%1$d secondes).</string>
     
