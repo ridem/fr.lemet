@@ -89,6 +89,12 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name="fr.lemet.application.activity.plans.PlanReseau"
+                android:label="Plan du réseau"
+                android:hardwareAccelerated="true"
+                >
+        </activity>
         <activity android:name="fr.lemet.application.activity.pointsdevente.ListPointsDeVente"
                   android:configChanges="orientation|keyboardHidden"/>
         <activity android:name="fr.lemet.application.activity.alerts.TabAlertes" android:configChanges="orientation|keyboardHidden"/>

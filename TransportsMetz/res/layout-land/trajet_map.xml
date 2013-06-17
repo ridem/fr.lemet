@@ -29,7 +29,8 @@
             android:id="@+id/scrollTrajets"
             android:layout_width="250dip"
             android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true" >
+            android:layout_alignParentLeft="true"
+            android:fillViewport="false">
 
             <LinearLayout
                 android:id="@+id/trajetDetail"

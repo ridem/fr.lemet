@@ -175,10 +175,14 @@ public class TransportsMetz extends AccueilActivity {
 				showDialog(DIALOG_A_PROPOS);
 				return true;
 			case R.id.menu_plan:
-				copieImageIfNotExists();
+			/*	copieImageIfNotExists();
 				Intent intentMap = new Intent(Intent.ACTION_VIEW);
-				intentMap.setDataAndType(Uri.fromFile(new File(getFilesDir(), "plan_2012_2013.jpg")), "image/*");
-				startActivity(intentMap);
+				intentMap.setDataAndType(Uri.fromFile(new File(getFilesDir(), "plan_2012_2013.jpg")), "image*//*");
+				startActivity(intentMap);*/
+
+
+
+
 				return true;
 			case MENU_TICKETS:
 				Intent intentTickets = new Intent(this, ListPointsDeVente.class);
