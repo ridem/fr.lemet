@@ -70,13 +70,13 @@ public class AlarmReceiver extends BroadcastReceiver {
     private static final int NOTIFICATION_VERSION_ID = 1;
 
     private void createNotification(Context context, String nouvelleVersion) {
-        int icon = R.drawable.icon;
+        int icon = R.drawable.logo_lemet;
         CharSequence tickerText = context.getString(R.string.nouvelleVersion);
         long when = System.currentTimeMillis();
         CharSequence contentTitle = context.getString(R.string.nouvelleVersion);
         CharSequence contentText = context.getString(R.string.versionDisponible, nouvelleVersion);
 
-        Uri uri = Uri.parse("market://details?id=fr.ybo.application");
+        Uri uri = Uri.parse("market://details?id=fr.lemet.application");
         Intent notificationIntent = new Intent(Intent.ACTION_VIEW, uri);
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
 

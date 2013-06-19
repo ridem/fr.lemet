@@ -25,14 +25,13 @@ import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
 import fr.lemet.transportscommun.R;
-import fr.lemet.transportscommun.R;
 
 /**
  * An extension of {@link ActivityHelper} that provides Android 3.0-specific
  * functionality for Honeycomb tablets. It thus requires API level 11.
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class ActivityHelperHoneycomb extends ActivityHelper {
+public class ActivityHelperHoneycomb extends ActivityHelper{
 
 	protected ActivityHelperHoneycomb(Activity activity) {
 		super(activity);
@@ -48,9 +47,13 @@ public class ActivityHelperHoneycomb extends ActivityHelper {
 		if (UIUtils.isTablet(mActivity)) {
 			mActivity.getActionBar().setDisplayOptions(0, ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
 		} else {
-			mActivity.getActionBar().setDisplayOptions(ActionBar.DISPLAY_USE_LOGO,
+			ActionBar actionBar = mActivity.getActionBar();
+
+            actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO,
 					ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE);
-		}
+
+
+        }
 	}
 
 	/** {@inheritDoc} */
@@ -66,6 +69,8 @@ public class ActivityHelperHoneycomb extends ActivityHelper {
 		} else {
 			mActivity.getActionBar().setDisplayOptions(ActionBar.DISPLAY_USE_LOGO,
 					ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE);
+
+
 		}
 	}
 

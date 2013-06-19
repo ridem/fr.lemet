@@ -47,7 +47,7 @@
         <item name="android:drawablePadding">2dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff29549f</item>
+        <item name="android:textColor">#117E8E</item>
         <item name="android:background">@null</item>
     </style>
     
@@ -56,6 +56,7 @@
         <item name="android:background">@color/actionbar_background</item>
         <item name="android:textColor">@color/accent_1</item>
         <item name="android:titleTextStyle">@style/ActionBarText</item>
+        <item name="android:logo">@drawable/lemet_logo</item>
     </style>
     <style name="ActionBar.black" parent="android:style/Widget.Holo.ActionBar">
     </style>

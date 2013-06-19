@@ -74,7 +74,7 @@ public class TransportsMetzApplication extends AbstractTransportsApplication {
 
 			@Override
 			public int getCompactLogo() {
-				return R.drawable.icone_compacte;
+				return R.drawable.logo_lemet;
 			}
 
 			@Override
