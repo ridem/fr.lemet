@@ -120,8 +120,8 @@ public class DetailArret extends AbstractDetailArret implements Refreshable {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (isToday()) {
-			infoBar = (LinearLayout) findViewById(R.id.infobar);
-			new GetDeparture().execute();
+			//infoBar = (LinearLayout) findViewById(R.id.infobar);
+			//new GetDeparture().execute();
 		}
 	}
 

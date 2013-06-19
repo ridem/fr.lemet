@@ -34,7 +34,7 @@
     <string name="dialogRequetePointsDeVente">Interrogation du STAR.</string>
     <string name="dialogAPropos">LeMet, préversion. <br /> <u>Supélec</u>
     </string>
-    <string name="detailarret_empty">Pas de bus à la date sélectionnée, vous pouvez changer de date dans la bar d\'actions</string>
+    <string name="detailarret_empty">Pas de bus à la date sélectionnée, veuillez changer la date</string>
     <string name="itineraires_empty">Aucun itinéraire n\'a été trouvé pour ces adresses.</string>
     <string name="hint_rechercherarret">Recherche d\'arrêts</string>
     <string name="listfavori_empty">Aucun favori trouvé.</string>

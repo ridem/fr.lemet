@@ -131,7 +131,7 @@
     </RelativeLayout>
 
 </LinearLayout>
-<LinearLayout android:layout_height="30dip"
+<!--<LinearLayout android:layout_height="30dip"
     android:layout_width="fill_parent"
     android:layout_gravity="bottom"
     android:background="@color/dark_transparent"
@@ -144,5 +144,5 @@
             android:textColor="@android:color/white"
             android:textSize="14dip"
             android:text="@string/getRealTime"/>
-</LinearLayout>
+</LinearLayout>   -->
 </FrameLayout>

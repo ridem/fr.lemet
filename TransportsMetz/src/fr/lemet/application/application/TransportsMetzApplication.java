@@ -16,9 +16,7 @@ package fr.lemet.application.application;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -39,26 +37,24 @@ import fr.lemet.application.R;
 import fr.lemet.application.activity.TransportsMetz;
 import fr.lemet.application.activity.bus.DetailArret;
 import fr.lemet.application.activity.bus.TabFavoris;
-import fr.lemet.application.activity.preferences.PreferencesMetz;
-import fr.lemet.application.activity.velos.ListStationsFavoris;
 import fr.lemet.application.database.TransportsMetzDatabase;
 import fr.lemet.application.database.modele.AlertBdd;
 import fr.lemet.application.keolis.Keolis;
 import fr.lemet.application.keolis.modele.bus.Alert;
 import fr.lemet.application.services.UpdateTimeService;
-//import fr.lemet.application.util.AlarmReceiver;
 import fr.lemet.application.util.CalculItineraires;
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.DonnesSpecifiques;
 import fr.lemet.transportscommun.activity.AccueilActivity;
 import fr.lemet.transportscommun.activity.commun.ActivityHelper;
 import fr.lemet.transportscommun.activity.commun.BaseActivity;
-import fr.lemet.transportscommun.activity.commun.Refreshable;
 import fr.lemet.transportscommun.donnees.manager.gtfs.CoupleResourceFichier;
 import fr.lemet.transportscommun.donnees.modele.Bounds;
 import fr.lemet.transportscommun.util.ErreurReseau;
 import fr.ybo.opentripplanner.client.OpenTripPlannerException;
 import fr.ybo.opentripplanner.client.modele.GraphMetadata;
+
+//import fr.lemet.application.util.AlarmReceiver;
 
 /**
  * Classe de l'application permettant de stocker les attributs globaux à
@@ -212,11 +208,11 @@ public class TransportsMetzApplication extends AbstractTransportsApplication {
 			//case R.id.menu_prefs:
 			//	activity.startActivity(new Intent(activity, PreferencesMetz.class));
 			//	return true;
-			case R.id.menu_refresh:
-				if (activity instanceof Refreshable) {
-					((Refreshable) activity).refresh();
-				}
-				return true;
+			//case R.id.menu_refresh:
+			//	if (activity instanceof Refreshable) {
+			//		((Refreshable) activity).refresh();
+			//	}
+			//	return true;
 			default:
 				return false;
 		}
