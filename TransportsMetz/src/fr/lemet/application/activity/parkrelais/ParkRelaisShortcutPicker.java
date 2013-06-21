@@ -15,7 +15,6 @@ package fr.lemet.application.activity.parkrelais;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 
 import fr.lemet.application.R;
 import fr.lemet.transportscommun.activity.commun.BaseActivity;
@@ -40,8 +39,8 @@ public class ParkRelaisShortcutPicker extends BaseActivity.BaseSimpleActivity {
         Intent intent = new Intent();
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.btn_parking));
-		Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.btn_parking_default);
-        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconResource);
+		//Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.btn_parking_default);
+        //intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconResource);
 
         // Now, return the result to the launcher
         setResult(RESULT_OK, intent);

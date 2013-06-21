@@ -1,13 +1,14 @@
 package fr.lemet.application.activity.plans;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import fr.lemet.application.R;
 
-public class PlanReseau extends Activity {
+import fr.lemet.application.R;
+import fr.lemet.transportscommun.activity.commun.BaseActivity;
+
+public class PlanReseau extends BaseActivity.BaseSimpleActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

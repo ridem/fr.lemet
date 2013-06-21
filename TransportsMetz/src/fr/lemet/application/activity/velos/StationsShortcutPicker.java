@@ -15,7 +15,6 @@ package fr.lemet.application.activity.velos;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 
 import fr.lemet.application.R;
 import fr.lemet.transportscommun.activity.commun.BaseActivity.BaseSimpleActivity;
@@ -40,8 +39,8 @@ public class StationsShortcutPicker extends BaseSimpleActivity {
         Intent intent = new Intent();
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.btn_velo));
-		Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.btn_velo_default);
-        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconResource);
+		//Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.btn_velo_default);
+        //intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconResource);
 
         // Now, return the result to the launcher
         setResult(RESULT_OK, intent);

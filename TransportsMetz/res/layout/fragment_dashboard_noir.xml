@@ -33,15 +33,14 @@
         android:text="@string/btn_alert"
         android:drawableTop="@drawable/home_btn_alert_clair" />
 
-    <Button android:id="@+id/home_btn_velo"
-        style="@style/DashboardButton_clair"
+<!--       style="@style/DashboardButton_clair"
         android:text="@string/btn_velo"
         android:drawableTop="@drawable/home_btn_velo_clair" />
 
     <Button android:id="@+id/home_btn_parking"
         style="@style/DashboardButton_clair"
         android:text="@string/btn_parking"
-        android:drawableTop="@drawable/home_btn_parking_clair" />
+        android:drawableTop="@drawable/home_btn_parking_clair" /> -->
 
     <Button android:id="@+id/home_btn_itineraires"
         style="@style/DashboardButton_clair"

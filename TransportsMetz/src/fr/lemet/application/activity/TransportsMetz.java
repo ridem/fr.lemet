@@ -15,10 +15,8 @@ package fr.lemet.application.activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
@@ -29,11 +27,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Date;
 
 import fr.lemet.application.R;
@@ -41,7 +34,6 @@ import fr.lemet.application.activity.bus.ListNotif;
 import fr.lemet.application.activity.loading.LoadingActivity;
 import fr.lemet.application.activity.pointsdevente.ListPointsDeVente;
 import fr.lemet.application.application.TransportsMetzApplication;
-import fr.lemet.application.keolis.KeolisException;
 import fr.lemet.application.util.Version;
 import fr.lemet.transportscommun.activity.AccueilActivity;
 import fr.lemet.transportscommun.activity.commun.UIUtils;
@@ -89,7 +81,7 @@ public class TransportsMetz extends AccueilActivity {
 			textView.setText(spanned, TextView.BufferType.SPANNABLE);
 			textView.setMovementMethod(LinkMovementMethod.getInstance());
 			builder.setView(view);
-			builder.setTitle(getString(R.string.titleTransportsRennes,
+			builder.setTitle(getString(R.string.titleTransportsMetz,
 					Version.getVersionCourante(getApplicationContext())));
 			builder.setCancelable(false);
 			builder.setNeutralButton(getString(R.string.Terminer), new TransportsMetz.TerminerClickListener());

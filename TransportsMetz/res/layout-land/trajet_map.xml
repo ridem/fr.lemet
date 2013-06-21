@@ -49,7 +49,7 @@
                 android:id="@id/mapview"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:apiKey="03l-WrraTStUsPyZBl4dKKLZZBEnnYHeVDoEspw"
+                android:apiKey="AIzaSyA5iJSSLjLzbbzoQeb1LQWG1e6tPJmRyNA"
                 android:clickable="true" />
 
             <ImageButton
