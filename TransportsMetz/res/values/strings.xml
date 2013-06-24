@@ -67,7 +67,7 @@
 
     <string name="btn_planslignes">Plan des lignes</string>
 
-    <string name="btn_bus">Horaires et lignes</string>
+    <string name="btn_bus">Horaires</string>
     <string name="btn_bus_favori">Arrêts Favoris</string>
     <string name="btn_bus_gps">Arrêts à proximité</string>
     <string name="btn_alert">Alertes</string>
