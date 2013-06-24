@@ -27,16 +27,9 @@
         nouveau les horaires que vous avez déjà chargés.
     </string>
     <string name="infoChargementGtfs">Chargement des données LeMet.</string>
-    <string name="dialogRequeteVeloStar">Interrogation du service LE vélo STAR.</string>
-    <string name="dialogRequeteAlerts">Interrogation du STAR.</string>
     <string name="dialogRequeteTwitter">Interrogation de Twitter.</string>
-    <string name="dialogRequeteParkRelais">Interrogation du STAR.</string>
-    <string name="dialogRequetePointsDeVente">Interrogation du STAR.</string>
-    <string name="dialogAPropos">LeMet.\n Logiciel en préversion, sous licence GPL.\n Guillaume MOUROZEAU, Juan Manuel MUNOZ PEREZ, Mehdi REJRAJI, élèves à <b>Supélec</b>.
+    <string name="dialogAPropos">LeMet, préversion.
     </string>
-    <string name="textAPropos">LeMet. Logiciel en préversion, sous licence GPL. Guillaume MOUROZEAU, Juan Manuel MUNOZ PEREZ, Mehdi REJRAJI, élèves à Supélec.
-    </string>
-    <string name="Terminer">Terminer</string>
     <string name="detailarret_empty">Pas de bus à la date sélectionnée, veuillez changer la date</string>
     <string name="itineraires_empty">Aucun itinéraire n\'a été trouvé pour ces adresses.</string>
     <string name="hint_rechercherarret">Recherche d\'arrêts</string>
@@ -83,12 +76,30 @@
     <!-- Libellés de menus -->
     <string name="menu_selectDay">Choisir une date</string>
     <string name="menu_refresh">Rafraîchir</string>
-    <string name="menu_apropos">À propos</string>
+    <string name="menu_apropos">A propos</string>
     <string name="menu_carte">Carte</string>
     <string name="menu_loadLines">Charger toutes les lignes</string>
     <string name="btn_itineraires">Calcul d\'itinéraires</string>
     <!-- Widget -->
-    <string name="widget_choix">ChoisissH">Une erreur est survenue lors du géo-codage de l\'adresse, le quota est dépassé
+    <string name="widget_choix">Choisissez de un à trois arrêts favoris.</string>
+    <string name="widget11_choix">Choisissez un arrêt favori.</string>
+    <!-- Génériques -->
+    <string name="Terminer">Terminer</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
+    <string name="prochain">Prochain :</string>
+    <string name="erreur_widgetBeforeLaunch">Vous n\'avez pas encore lancé l\'application, veuillez la lancer avant
+        d\'essayer d\'ajouter des
+        widgets.
+    </string>
+    <string name="erreur_widgetWithNoFavori">Vous n\'avez pas encore de favori, pour utiliser les widgets, il faut
+        ajouter des favoris.
+    </string>
+    <string name="erreur_auMoinsUnFavori">Sélectionnez au moins un arrêt favori.</string>
+    <string name="erreur_geocodage">Une erreur est survenue lors du géo-codage de l\'adresse, veuillez réessayer plus
+        tard.
+    </string>
+    <string name="erreur_geocodage_quota">Une erreur est survenue lors du géo-codage de l\'adresse, le quota est dépassé
         (2500 par jours).
     </string>
     <string name="erreur_pasAdresseDepart">Aucune correspondance n\'a été trouvé pour l\'adresse de départ</string>
@@ -121,19 +132,19 @@
     <string name="supprimerNotif">Supprimer la notification</string>
     <string name="lineShortcut">Ligne de bus</string>
     <string name="lineName">Ligne %1$s</string>
-    
+
     <string name="chooseTheme">Choisissez un thème</string>
-    
+
     <string name="theme">Thème</string>
     <string name="debug">Debug</string>
     <string name="activateDebug">Activer les logs debugs.</string>
-    
+
     <string name="erreurTimeoNotFound">Erreur : aucun arrêt trouvé avec le code %1$s</string>
-    
+
     <string name="getRealTime">Récupération des horaires en cours.</string>
-    
+
     <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau LeMet (%1$d secondes).</string>
-    
-    
+
+
     <string name="messageStarEnRetard">Les données des horaires ne sont plus valides, soit vous n\'avez pas mis à jour l\'application, soit le LeMet n\'a pas encore fournit les horaires, et je n\'ai donc pas pu les intégrer…</string>
 </resources>
