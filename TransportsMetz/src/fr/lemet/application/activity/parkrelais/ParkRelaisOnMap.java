@@ -62,7 +62,7 @@ public class ParkRelaisOnMap extends BaseMapActivity {
 
         // Creation du geo point
         List<Overlay> mapOverlays = mapView.getOverlays();
-        Drawable drawable = getResources().getDrawable(R.drawable.markee_parking);
+        Drawable drawable = getResources().getDrawable(R.drawable.markee_pos);
         MapItemizedOverlayParking itemizedoverlay = new MapItemizedOverlayParking(drawable, this);
 
         int minLatitude = Integer.MAX_VALUE;

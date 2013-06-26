@@ -80,15 +80,6 @@
                     android:paddingRight="0dip"
                     android:paddingTop="3dip" />
 
-                <ImageView
-                    android:id="@+id/checkVeloIcone"
-                    android:layout_width="44dip"
-                    android:layout_height="42dip"
-                    android:paddingBottom="3dip"
-                    android:paddingLeft="7dip"
-                    android:paddingRight="1dip"
-                    android:paddingTop="3dip"
-                    android:src="@drawable/icone_velo" />
 
                 <CheckBox
                     android:id="@+id/checkVelo"
@@ -99,15 +90,6 @@
                     android:paddingRight="0dip"
                     android:paddingTop="3dip" />
 
-                <ImageView
-                    android:id="@+id/checkParcIcone"
-                    android:layout_width="44dip"
-                    android:layout_height="42dip"
-                    android:paddingBottom="3dip"
-                    android:paddingLeft="7dip"
-                    android:paddingRight="1dip"
-                    android:paddingTop="3dip"
-                    android:src="@drawable/icone_parc" />
 
                 <CheckBox
                     android:id="@+id/checkParc"
