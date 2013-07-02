@@ -15,6 +15,9 @@
   Contributors:
       ybonnel - initial API and implementation
 -->
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -33,15 +36,21 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
+      <fragment
+                android:name="com.google.android.gms.maps.MapFragment"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mapview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true"
+              />
 
-
-      <com.google.android.maps.MapView
+     <!-- <com.google.android.maps.MapView
                 android:id="@id/mapview"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:apiKey="03l-WrraTStXRjFXn_GnLQo4bKKF5hpT-_B6Z3A"
-                android:clickable="true" />
-
+                android:apiKey="AIzaSyA5iJSSLjLzbbzoQeb1LQWG1e6tPJmRyNA"
+                android:clickable="true" />       -->
             <!--
          Debug
         android:apiKey="03l-WrraTStXRjFXn_GnLQo4bKKF5hpT-_B6Z3A"
@@ -121,14 +130,14 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <ImageButton
+      <!--  <ImageButton
             android:id="@id/layers_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="42dp"
             android:layout_marginRight="5dp"
-            android:src="@android:drawable/ic_menu_preferences" />
+            android:src="@android:drawable/ic_menu_preferences" />    -->
     </FrameLayout>
 
 </LinearLayout>

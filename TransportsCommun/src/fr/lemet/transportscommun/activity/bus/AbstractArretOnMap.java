@@ -1,54 +1,64 @@
 package fr.lemet.transportscommun.activity.bus;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import com.google.android.maps.GeoPoint;
-import com.google.android.maps.MapController;
-import com.google.android.maps.MapView;
-import com.google.android.maps.MyLocationOverlay;
-import com.google.android.maps.Overlay;
-import com.google.android.maps.OverlayItem;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-import fr.lemet.transportscommun.donnees.modele.ArretFavori;
+import java.util.ArrayList;
+import java.util.List;
+
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.R;
-import fr.lemet.transportscommun.activity.commun.BaseActivity.BaseMapActivity;
+import fr.lemet.transportscommun.activity.commun.BaseActivity;
 import fr.lemet.transportscommun.donnees.modele.ArretFavori;
 import fr.lemet.transportscommun.donnees.modele.Ligne;
 import fr.lemet.transportscommun.map.MapItemizedOverlayArret;
-import fr.lemet.transportscommun.util.FixedMyLocationOverlay;
 import fr.lemet.transportscommun.util.IconeLigne;
 
-public abstract class AbstractArretOnMap extends BaseMapActivity {
+//import com.google.android.maps.MapActivity;
+
+//import com.google.android.maps.GeoPoint;
+//import com.google.android.maps.MyLocationOverlay;
+
+public abstract class AbstractArretOnMap extends BaseActivity.BaseMapActivity {
 
 	protected abstract int getLayout();
 
 	protected abstract void setupActionBar();
-
+    private GoogleMap mMap;
 	/**
 	 * Called when the activity is first created.
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+        Ligne myLigne = (Ligne) getIntent().getSerializableExtra("ligne");
 		super.onCreate(savedInstanceState);
+        //getActionBar().setTitle("Ligne " + myLigne.id);
 		setContentView(getLayout());
 		setupActionBar();
-		Ligne myLigne = (Ligne) getIntent().getSerializableExtra("ligne");
+
 		String currentDirection = getIntent().getStringExtra("direction");
 
-		MapView mapView = (MapView) findViewById(R.id.mapview);
-		mapView.setBuiltInZoomControls(true);
+		//MapView mapView = (MapView) findViewById(R.id.mapview);
+		//mapView.setBuiltInZoomControls(true);
 
-		MapController mc = mapView.getController();
+        mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.mapview)).getMap();
+
+        GoogleMapOptions mo = new GoogleMapOptions();
+		//MapController mc = mapView.getController();
 
 		// Creation du geo point
-		List<Overlay> mapOverlays = mapView.getOverlays();
+		//List<Overlay> mapOverlays = mapView.getOverlays();
 		Drawable drawable = getResources().getDrawable(IconeLigne.getMarkeeResource(myLigne.nomCourt));
+
 		MapItemizedOverlayArret itemizedoverlay = new MapItemizedOverlayArret(drawable, this, myLigne.id,
 				currentDirection);
 		List<String> selectionArgs = new ArrayList<String>(2);
@@ -69,19 +79,19 @@ public abstract class AbstractArretOnMap extends BaseMapActivity {
 		requete.append(" order by ArretRoute.sequence");
 		Cursor cursor = AbstractTransportsApplication.getDataBaseHelper().executeSelectQuery(requete.toString(),
 				selectionArgs);
-		int minLatitude = Integer.MAX_VALUE;
-		int maxLatitude = Integer.MIN_VALUE;
-		int minLongitude = Integer.MAX_VALUE;
-		int maxLongitude = Integer.MIN_VALUE;
+		double minLatitude = Double.MAX_VALUE;
+		double maxLatitude = Double.MIN_VALUE;
+		double minLongitude = Double.MAX_VALUE;
+		double maxLongitude = Double.MIN_VALUE;
 
 		while (cursor.moveToNext()) {
 			String id = cursor.getString(cursor.getColumnIndex("_id"));
 			String nom = cursor.getString(cursor.getColumnIndex("arretName"));
 			String direction = cursor.getString(cursor.getColumnIndex("direction"));
 			int macroDirection = cursor.getInt(cursor.getColumnIndex("macroDirection"));
-			int latitude = (int) (cursor.getDouble(cursor.getColumnIndex("latitude")) * 1.0E6);
-			int longitude = (int) (cursor.getDouble(cursor.getColumnIndex("longitude")) * 1.0E6);
-			GeoPoint geoPoint = new GeoPoint(latitude, longitude);
+			double latitude = (cursor.getDouble(cursor.getColumnIndex("latitude")));
+			double longitude = (cursor.getDouble(cursor.getColumnIndex("longitude")));
+			//GeoPoint geoPoint = new GeoPoint(latitude, longitude);
 			if (latitude < minLatitude) {
 				minLatitude = latitude;
 			}
@@ -95,7 +105,7 @@ public abstract class AbstractArretOnMap extends BaseMapActivity {
 				maxLongitude = longitude;
 			}
 
-			OverlayItem overlayitem = new OverlayItem(geoPoint, nom, direction);
+			//OverlayItem overlayitem = new OverlayItem(geoPoint, nom, direction);
 			ArretFavori arretFavori = new ArretFavori();
 			arretFavori.direction = direction;
 			arretFavori.nomArret = nom;
@@ -104,31 +114,57 @@ public abstract class AbstractArretOnMap extends BaseMapActivity {
 			arretFavori.nomLong = myLigne.nomLong;
 			arretFavori.arretId = id;
 			arretFavori.macroDirection = macroDirection;
-			itemizedoverlay.addOverlay(overlayitem, arretFavori);
+
+            mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(latitude, longitude))
+                    .title(nom + " -> " + direction))  ;
+
+
+                    //.icon(BitmapDescriptorFactory.fromResource(IconeLigne.getMarkeeResource(myLigne.nomCourt))));
+
+			//itemizedoverlay.addOverlay(overlayitem, arretFavori);
 		}
 		cursor.close();
-		mapOverlays.add(itemizedoverlay);
-		mc.animateTo(new GeoPoint((maxLatitude + minLatitude) / 2, (maxLongitude + minLongitude) / 2));
-		mc.setZoom(14);
+        System.out.println(maxLatitude);
+        System.out.println(minLatitude);
+        System.out.println(maxLongitude);
+        System.out.println(minLongitude);
+		//mapOverlays.add(itemizedoverlay);
+		//mc.animateTo(new GeoPoint((maxLatitude + minLatitude) / 2, (maxLongitude + minLongitude) / 2));
+		//mc.setZoom(14);
+        LatLng loc = new LatLng((double) (maxLatitude + minLatitude) / 2,(double) (maxLongitude + minLongitude)/2);
+        GoogleMapOptions options = new GoogleMapOptions();
+        //CameraPosition cam = CameraPosition.fromLatLngZoom(loc,14);
+        MapFragment.newInstance(options);
+        options.mapType(GoogleMap.MAP_TYPE_NORMAL)
+                .compassEnabled(true)
+                .rotateGesturesEnabled(true)
+                .tiltGesturesEnabled(false)
+                .camera(CameraPosition.fromLatLngZoom(loc,13));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 12));
 
-		myLocationOverlay = new FixedMyLocationOverlay(this, mapView);
-		mapOverlays.add(myLocationOverlay);
-		myLocationOverlay.enableMyLocation();
+		//myLocationOverlay = new FixedMyLocationOverlay(this, mapView);
+		//mapOverlays.add(myLocationOverlay);
+		//myLocationOverlay.enableMyLocation();
 
-		gestionButtonLayout();
+
+
+		//gestionButtonLayout();
 	}
 
-	private MyLocationOverlay myLocationOverlay;
+	//private MyLocationOverlay myLocationOverlay;
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		myLocationOverlay.enableMyLocation();
+        mMap.setMyLocationEnabled(true);
+        //myLocationOverlay.enableMyLocation();
 	}
 
 	@Override
 	protected void onPause() {
-		myLocationOverlay.disableMyLocation();
+        mMap.setMyLocationEnabled(false);
+		//myLocationOverlay.disableMyLocation();
 		super.onPause();
 	}
 

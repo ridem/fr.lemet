@@ -24,14 +24,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import fr.lemet.application.R;
-import fr.lemet.application.activity.alerts.TabAlertes;
 import fr.lemet.application.activity.bus.BusMetz;
 import fr.lemet.application.activity.bus.ListArretByPosition;
-import fr.lemet.application.activity.itineraires.ItineraireRequete;
-import fr.lemet.application.activity.parkrelais.ListParkRelais;
 import fr.lemet.application.activity.plans.PlanReseau;
-import fr.lemet.application.activity.velos.ListStationsByPosition;
-
+import fr.lemet.application.activity.plans.PlansLignes;
 import fr.lemet.application.application.TransportsMetzApplication;
 import fr.lemet.transportscommun.util.Theme;
 
@@ -65,6 +61,12 @@ public class DashboardFragment extends Fragment {
 				startActivity(new Intent(getActivity(), PlanReseau.class));
 			}
 		});
+
+        root.findViewById(R.id.home_btn_parking).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), PlansLignes.class));
+            }
+        });
 		/*root.findViewById(R.id.home_btn_parking).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				startActivity(new Intent(getActivity(), ListParkRelais.class));

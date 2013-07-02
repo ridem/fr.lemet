@@ -17,22 +17,26 @@
           android:installLocation="auto"
           android:versionCode="100"
           android:versionName="1.0.0">
+    
+    <uses-sdk android:minSdkVersion="4"
+              android:targetSdkVersion="12"/>
+
+    <permission android:name="fr.lemet.application.permission.MAPS_RECEIVE"
+                android:protectionLevel="signature"/>
+    <uses-permission android:name="fr.lemet.application.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+
     <uses-feature
             android:glEsVersion="0x00020000"
             android:required="true"/>
-    
-    <uses-sdk android:minSdkVersion="4"
-              android:targetSdkVersion="11"/>
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <permission android:name="fr.lemet.application.permission.MAPS_RECEIVE"
-            android:protectionLevel="signature"/>
-    <uses-permission android:name="fr.lemet.application.permission.MAPS_RECEIVE"/>
 
     <application android:icon="@drawable/logo_lemet" android:label="@string/app_name"
                  android:name="fr.lemet.application.application.TransportsMetzApplication"
@@ -133,6 +137,12 @@
                 >
         </activity>
 
+        <activity
+                android:name="fr.lemet.application.activity.plans.PlansLignes"
+                android:label="@string/btn_planslignes"
+                >
+        </activity>
+
         <service
                 android:name="fr.lemet.application.services.UpdateTimeService"
                 android:label="TransportsMetzUpdateTimeService">
@@ -201,7 +211,7 @@
             </intent-filter>
         </activity>
 
-        <uses-library android:name="com.google.android.maps" android:required="false"/>
+        <uses-library android:name="com.google.android.maps" android:required="true"/>
 
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
