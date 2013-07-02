@@ -124,7 +124,7 @@ public class ListPointsDeVente extends BaseActivity.BaseListActivity implements 
 
         listView.setTextFilterEnabled(true);
         registerForContextMenu(listView);
-		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogRequetePointsDeVente), true) {
+		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogAPropos), true) {
 
             @Override
             protected void myDoBackground() throws ErreurReseau {

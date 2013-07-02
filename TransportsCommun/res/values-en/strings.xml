@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="alertes">Warnings</string>
+    <string name="alertes">Alertes</string>
     <string name="twitter">Twitter</string>
-    
-    <string name="exportFavoris">Export your favorites</string>
-    <string name="importFavoris">Import your favorites</string>
-    
-    <string name="exportErreurSd">No SDCard detected, the export is impossible</string>
-    <string name="exportResult">The favorites have been exported in the folder "transportsrennes"</string>
-    <string name="importErreurSd">No SDCard detected, the import is impossibl</string>
-    <string name="importErreurFichierNonPresent">The file "transportsrennes/arrets_favoris.txt" doesn\'t exist</string>
-    <string name="importErreurGenerique">An error has been detected : %1$s</string>
-    <string name="importResult">The favorites have been imported with success</string>
-    <string name="all">All</string>
-    <string name="ajouterGroupe">Add a new group</string>
-    <string name="suprimerGroupe">Delete the group</string>
-    <string name="ajouter">Add</string>
-    <string name="annuler">Cancel</string>
-    <string name="groupeObligatoire">The group name is mandatory</string>
-    <string name="groupeExistant">There is already a group with that name</string>
-    <string name="deplacerGroupe">Move in a group</string>
-    <string name="chooseGroupe">Choose a group</string>
-    <string name="erreurNoSpaceLeft">No space left to load data, please free some space before load data.</string>
-    
-    <string name="vers">to</string>
-    <string name="erreurReseau">A connection error has been detected, please try again later.</string>
-    <string name="dans">in</string>
-    <string name="heures">hours</string>
+
+    <string name="exportFavoris">Export des favoris</string>
+    <string name="importFavoris">Import des favoris</string>
+
+    <string name="exportErreurSd">Pas de SDCard détectée, impossible d\'exporter les données</string>
+    <string name="exportResult">Les arrêts favoris ont été exportés dans le répertoire "%1$s"</string>
+    <string name="importErreurSd">Pas de SDCard détectée, impossible d\'importer les données</string>
+    <string name="importErreurFichierNonPresent">Le fichier "%1$s/arrets_favoris.txt" n\'existe pas</string>
+    <string name="importErreurGenerique">Un erreur est survenue pendant l\'import des favoris : %1$s</string>
+    <string name="importResult">Les favoris ont été importés</string>
+
+    <string name="all">Tous</string>
+    <string name="ajouterGroupe">Ajouter un groupe</string>
+    <string name="suprimerGroupe">Supprimer le groupe</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="annuler">Annuler</string>
+    <string name="groupeObligatoire">Le nom du groupe est obligatoire</string>
+    <string name="groupeExistant">Il existe déjà un groupe avec ce nom</string>
+    <string name="deplacerGroupe">Déplacer dans un groupe</string>
+    <string name="chooseGroupe">Choisissez un groupe</string>
+
+
+    <string name="vers">vers</string>
+    <string name="erreurReseau">Une erreur de connection a été détectée, veuillez réessayer plus tard.</string>
+    <string name="dans">dans</string>
+    <string name="heures">heures</string>
     <string name="minutes">minutes</string>
     <string name="miniHeures">h</string>
     <string name="miniMinutes">min</string>
-    <string name="tempsRestant">Alert in %1$s.</string>
-    <string name="creerNotif">Create an alert.</string>
-    <string name="noGoogleMap">GoogleMap not found</string>
-    <string name="erreurLigneInconue">The Bus line %1$s don\'t exist anymore in schedules, please reload the data.
+    <string name="tempsRestant">Notification dans %1$s.</string>
+    <string name="creerNotif">Créer une alerte.</string>
+    <string name="noGoogleMap">GoogleMap non trouvé</string>
+    <string name="erreurNoSpaceLeft">Vous n\'avez plus de plus de disponible pour charger les données, veuillez faire de
+        la place avec de charger d\'autres données.
     </string>
-    <string name="premierAccesLigne">First access to line %1$s, loading data.</string>
-    <string name="chooseDirection">Choose a direction</string>
-    <string name="Toutes">All</string>
-    <string name="menu_orderByName">Alphabetically</string>
-    <string name="menu_orderBySequence">Route order</string>
-    <string name="rechercheArrets">Search for bus stops.</string>
-    <string name="activeGps">To fully enjoy this page, it is preferable to activate your GPS.</string>
-    <string name="ajouterFavori">Add to favorites</string>
-    <string name="suprimerFavori">Remove from favorites</string>
-    <string name="tropTard">Too late!</string>
-    
-    <string name="ferme">Closed</string>
-    <string name="complet">Full</string>
-    <string name="indisponible">Unavailable</string>
+    <string name="erreurLigneInconue">La ligne %1$s n\'existe plus dans les horaires, merci recharger les données.
+    </string>
+    <string name="premierAccesLigne">Premier accès à la ligne %1$s, chargement des données.</string>
+    <string name="chooseDirection">Choisissez une direction</string>
+    <string name="Toutes">Toutes</string>
+    <string name="menu_orderByName">Ordre alphabétique</string>
+    <string name="menu_orderBySequence">Ordre de la ligne</string>
+    <string name="rechercheArrets">Recherche des arrêts de bus.</string>
+    <string name="activeGps">Pour mieux profiter de cette page, il est préférable d\'activer votre GPS.</string>
+    <string name="ajouterFavori">Ajouter aux favoris</string>
+    <string name="suprimerFavori">Supprimer des favoris</string>
+    <string name="tropTard">Trop tard!</string>
+
+    <string name="ferme">Fermé</string>
+    <string name="complet">Complet</string>
+    <string name="indisponible">Indispo.</string>
 </resources>

@@ -14,138 +14,136 @@
   -->
 <resources>
     <!-- Nom de l'application -->
-    <string name="app_name">Transports Rennes</string>
+    <string name="app_name">Le Met'</string>
 
-    <string name="widget11_name">Transports Rennes 1x1</string>
-    <string name="widget21_name">Transports Rennes 2x1</string>
-    <string name="widget22_name">Transports Rennes 2x2</string>
-    <string name="widgetlowres_name">Transports Rennes 2x2 LowRes</string>
+    <string name="widget11_name">Le Met' 1x1</string>
+    <string name="widget21_name">Le Met' 2x1</string>
+    <string name="widget22_name">Le Met' 2x2</string>
+    <string name="widgetlowres_name">Le Met' 2x2 LowRes</string>
     <!-- Messages -->
-    <string name="titleTransportsRennes">Welcome to the application Transports Rennes %1$s</string>
-    <string name="majDispo">An update of the STAR\'s data is available, do you want to download it now? You will have to
-        reload schedules you
-        have already loaded.
+    <string name="titleTransportsMetz">Bienvenue dans l\'application Le Met' %1$s</string>
+    <string name="majDispo">Une mise à jour des données Le Met' est disponible, voulez-vous l\'effectuer maintenant?
+        Attention, vous devrez charger à
+        nouveau les horaires que vous avez déjà chargés.
     </string>
-    <string name="infoChargementGtfs">Loading data from STAR.</string>
-    <string name="dialogRequeteVeloStar">LE vélo STAR query</string>
-    <string name="dialogRequeteAlerts">STAR query</string>
-    <string name="dialogRequeteTwitter">Twitter query</string>
-    <string name="dialogRequeteParkRelais">STAR query</string>
-    <string name="dialogRequetePointsDeVente">STAR query</string>
-    <string name="dialogAPropos">The application Transports Rennes was developed in the context of open data from the
-        STAR and LE vélo STAR (&lt;a
-        href=\'http://data.keolis-rennes.com\'&gt;data.keolis-rennes.com&lt;/a&gt;).&lt;br/&gt;This application is
-        developed and maintained by one person on personal time, so thank you for your indulgence.&lt;br/&gt;Feel free
-        to send me any suggestions or
-        problem.&lt;br/&gt;
-        Analytics, real-time monitoring and communications provided by Capptain (&lt;a href=\'http://www.capptain.com\'&gt;www.capptain.com&lt;/a&gt;).
+    <string name="infoChargementGtfs">Chargement des données Le Met'.</string>
+    <string name="dialogRequeteTwitter">Interrogation de Twitter.</string>
+    <string name="dialogAPropos">Le Met', préversion.
     </string>
-    <string name="detailarret_empty">No buses at the selected date, you can choose a particular date the action bar.</string>
-    <string name="itineraires_empty">No itinerary has been found for these addresses.</string>
-    <string name="hint_rechercherarret">Bus stop search.</string>
-    <string name="listfavori_empty">No favorites found.</string>
-    <string name="go_googlemap">View on GoogleMap</string>
-    <string name="textAdresseDepart">Start</string>
+    <string name="detailarret_empty">Pas de bus à la date sélectionnée, veuillez changer la date</string>
+    <string name="itineraires_empty">Aucun itinéraire n\'a été trouvé pour ces adresses.</string>
+    <string name="hint_rechercherarret">Recherche d\'arrêts</string>
+    <string name="listfavori_empty">Aucun favori trouvé.</string>
+    <string name="go_googlemap">Visualiser sur GoogleMap</string>
+    <string name="textAdresseDepart">Départ</string>
     <string name="textAdresseArrivee">Destination</string>
-    <string name="exempleAdresse">Ex : place sainte anne, Rennes</string>
-    <string name="hint_rechercheParcRelai">Park &amp; Ride search.</string>
-    <string name="hint_recherchePointDeVente">Points of sale search.</string>
-    <string name="hint_rechercheStation">Station Search</string>
-    <string name="hint_positionCourante">Current position</string>
-    <string name="listevelofavoris_empty">No favorites station found.</string>
-    <string name="directionEntete">Towards :</string>
-    <string name="tooMuchFavoris">Already selected three favorite stops</string>
-    <string name="justOneFavori">Already selected one favorite stop</string>
-    <string name="favoriUsedByWidget">A widget is using this favorite, thank you for deleting it before the favorite.
+    <string name="exempleAdresse">Ex : Place Saint Jacques, Metz</string>
+    <string name="hint_rechercheParcRelai">Recherche de Parcs Relais</string>
+    <string name="hint_recherchePointDeVente">Recherche de Points de vente</string>
+    <string name="hint_rechercheStation">Recherche de stations</string>
+    <string name="hint_positionCourante">Position courante</string>
+    <string name="listevelofavoris_empty">Aucune station favorite trouvée.</string>
+    <string name="directionEntete">Direction :</string>
+    <string name="tooMuchFavoris">Déjà trois arrêts favoris sélectionnés</string>
+    <string name="justOneFavori">Déjà un arrêt favori sélectionné</string>
+    <string name="favoriUsedByWidget">Un widget utilise ce favori, merci de le supprimer avant de supprimer ce favori.
     </string>
-    <string name="chargementLigneFavori">\nLoading bus route %1$s which you have favorites.</string>
-    <string name="loadAllLineAlert">Attention load data from all lines can take several minutes (5 minutes on a Nexus
-        One), and will occupy
-        approximately 8.5 MB of data, but you will have access to all schedules in offline mode. Are you sure you want
-        to load (wifi strongly
-        recommended)?
+    <string name="chargementLigneFavori">\nChargement de la ligne %1$s dont vous avez des favoris.</string>
+    <string name="loadAllLineAlert">Attention, charger les données de toutes les lignes peut prendre plusieurs minutes
+        (2 minutes sur un Nexus One),
+        et occupera environ 8,5Mo de données, mais vous permettra d\'accéder à tous les horaires de manière instantanée.
+        Êtes-vous sûr de vouloir les charger?
     </string>
-    <string name="geocodageAdresseDepart">Geo-coding the start address</string>
-    <string name="geocodageAdresseArrivee">Geo-coding of the destination address</string>
-    <string name="calculItineraire">Calculation of possible routes in progress.</string>
-    <string name="depart">Starts at %1$s</string>
-    <string name="arrivee">Arriving at %1$s</string>
+    <string name="geocodageAdresseDepart">Geo-codage de l\'adresse de départ</string>
+    <string name="geocodageAdresseArrivee">Geo-codage de l\'adresse de destination</string>
+    <string name="calculItineraire">Calcul des itinéraires possibles en cours.</string>
+    <string name="depart">Départ à %1$s</string>
+    <string name="arrivee">Arrivée à %1$s</string>
     <!-- Libellés des boutons de la pages d'accueil -->
     <string name="btn_velo">LE vélo STAR</string>
-    <string name="btn_velo_favori">Favorite Stations</string>
-    <string name="btn_bus">Bus</string>
-    <string name="btn_bus_favori">Favorite stops</string>
-    <string name="btn_bus_gps">Nearest stops</string>
-    <string name="btn_alert">Warnings</string>
-    <string name="btn_parking">Park &amp; Ride</string>
-    <string name="menu_tickets">Points of sale</string>
+    <string name="btn_velo_favori">Stations favorites</string>
+
+    <string name="btn_carte">Plan du réseau</string>
+    <string name="btn_planslignes">Plan des lignes</string>
+
+    <string name="btn_bus">Horaires</string>
+    <string name="btn_bus_favori">Arrêts Favoris</string>
+    <string name="btn_bus_gps">Arrêts à proximité</string>
+    <string name="btn_alert">Alertes</string>
+    <string name="btn_parking">Parcs relais</string>
+    <string name="menu_tickets">Points de vente</string>
     <!-- Libellés de menus -->
-    <string name="menu_selectDay">Select a date</string>
-    <string name="menu_refresh">Refresh</string>
-    <string name="menu_apropos">About</string>
-    <string name="menu_carte">Map</string>
-    <string name="menu_loadLines">Load all bus lines</string>
-    <string name="btn_itineraires">Routes calculation</string>
+    <string name="menu_selectDay">Choisir une date</string>
+    <string name="menu_refresh">Rafraîchir</string>
+    <string name="menu_apropos">A propos</string>
+    <string name="menu_carte">Carte</string>
+    <string name="menu_loadLines">Charger toutes les lignes</string>
+    <string name="btn_itineraires">Calcul d\'itinéraires</string>
     <!-- Widget -->
-    <string name="widget_choix">Choose from one to three favorite stops.</string>
-    <string name="widget11_choix">Choose one favorite stop.</string>
+    <string name="widget_choix">Choisissez de un à trois arrêts favoris.</string>
+    <string name="widget11_choix">Choisissez un arrêt favori.</string>
     <!-- Génériques -->
-    <string name="Terminer">Finish</string>
-    <string name="oui">Yes</string>
-    <string name="non">No</string>
-    <string name="prochain">Next :</string>
-    <!-- Erreurs -->
-    <string name="erreur_widgetBeforeLaunch">You have not yet started the application, please run it before trying to
-        add widgets.
+    <string name="Terminer">Terminer</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
+    <string name="prochain">Prochain :</string>
+    <string name="erreur_widgetBeforeLaunch">Vous n\'avez pas encore lancé l\'application, veuillez la lancer avant
+        d\'essayer d\'ajouter des
+        widgets.
     </string>
-    <string name="erreur_widgetWithNoFavori">You do not have favorites yet. To use widgets add favorites.</string>
-    <string name="erreur_auMoinsUnFavori">Select at least one favorite stop.</string>
-    <string name="erreur_geocodage">An error occurred while geo-coding address, please try again later.</string>
-    <string name="erreur_pasAdresseDepart">No matches were found for the starting address</string>
-    <string name="erreur_pasAdresseArrivee">No matches were found for the destination address</string>
-    <string name="erreur_gpsPasPret">The GPS position has not yet been found.</string>
-    <string name="erreur_calculItineraires">An error occurred when calculating the route, please try again later.
+    <string name="erreur_widgetWithNoFavori">Vous n\'avez pas encore de favori, pour utiliser les widgets, il faut
+        ajouter des favoris.
     </string>
-
-    <string name="erreur_outOfBounds">The route requested has addresses outside the area covered.</string>
-    <string name="erreur_noTransitTimes">No bus found for the requested time.</string>
-    <string name="erreur_pathNotFound">No route found.</string>
-
-    <string name="nouvelleVersion">New version available</string>
-    <string name="versionDisponible">Version %1$s is available!</string>
-
-    <string name="menu_share">Share</string>
-    <string name="shareText">Transport Rennes, Android application to help you in transit of Rennes: http://goo.gl/ALKs0
+    <string name="erreur_auMoinsUnFavori">Sélectionnez au moins un arrêt favori.</string>
+    <string name="erreur_geocodage">Une erreur est survenue lors du géo-codage de l\'adresse, veuillez réessayer plus
+        tard.
+    </string>
+    <string name="erreur_geocodage_quota">Une erreur est survenue lors du géo-codage de l\'adresse, le quota est dépassé
+        (2500 par jours).
+    </string>
+    <string name="erreur_pasAdresseDepart">Aucune correspondance n\'a été trouvé pour l\'adresse de départ</string>
+    <string name="erreur_pasAdresseArrivee">Aucune correspondance n\'a été trouvé pour l\'adresse de destination
+    </string>
+    <string name="erreur_gpsPasPret">La position gps n\'a pas encore été trouvée.</string>
+    <string name="erreur_calculItineraires">Une erreur est survenue lors du calcul de l\'itinéraire, veuillez réessayer
+        plus tard.
     </string>
 
-    <string name="notifUpdateOn">Notification for updates</string>
-    <string name="preferences">Preferences</string>
+    <string name="erreur_outOfBounds">L\'itinéraire demandé possède des adresses en déhors de la zone couverte.</string>
+    <string name="erreur_noTransitTimes">Aucun bus trouvé pour l\'heure demandée.</string>
+    <string name="erreur_pathNotFound">Aucun itinéraire trouvé.</string>
 
-    <string name="notifText">Line %1$s, stop %2$s arrive in %3$s minutes</string>
-    <string name="notifShortText">Line %1$s, stop %2$s</string>
-    <string name="notifDescriptionText">Arrive in %1$s minutes</string>
-    <string name="listnotif_empty">No notification found.</string>
+    <string name="nouvelleVersion">Nouvelle version disponible</string>
+    <string name="versionDisponible">La version %1$s est disponible!</string>
+
+    <string name="menu_share">Partager</string>
+    <string name="shareText">Le Met', l\'application Android pour vous faciliter les transports à Metz !
+    </string>
+
+    <string name="notifUpdateOn">Notification pour les mises à jour</string>
+    <string name="preferences">Préférences</string>
+
+    <string name="notifText">Ligne %1$s, arrêt %2$s arrive dans %3$s minutes</string>
+    <string name="notifShortText">Ligne %1$s, arrêt %2$s</string>
+    <string name="notifDescriptionText">Arrive dans %1$s minutes</string>
+    <string name="listnotif_empty">Aucune notification trouvée.</string>
     <string name="notif">Notifications</string>
-    <string name="supprimerNotif">Delete the notification</string>
-    <string name="lineShortcut">Bus line</string>
-    <string name="lineName">Line %1$s</string>
-    
-    <string name="chooseTheme">Choose a style</string>
-    <string name="theme">Style</string>
+    <string name="supprimerNotif">Supprimer la notification</string>
+    <string name="lineShortcut">Ligne de bus</string>
+    <string name="lineName">Ligne %1$s</string>
+
+    <string name="chooseTheme">Choisissez un thème</string>
+
+    <string name="theme">Thème</string>
     <string name="debug">Debug</string>
-    <string name="activateDebug">Activate debug logs.</string>
-    
-    <string name="erreurTimeoNotFound">Error : no stop with code %1$s found</string>
-    
-    <string name="getRealTime">Get real time times.</string>
-    <string name="diffSecondsToHigh">There is more than 30 seconds between STAR\'s hour and your phone\'s hour (%1$d seconds).</string>
-    
-    
-    <string name="erreur_geocodage_quota">
-        Error while address geocoding, quota is over (2500 by day).
-    </string>
-    
-    
-    <string name="messageStarEnRetard">Times data aren\'t up to date, you must update application.</string>
-    
+    <string name="activateDebug">Activer les logs debugs.</string>
+
+    <string name="erreurTimeoNotFound">Erreur : aucun arrêt trouvé avec le code %1$s</string>
+
+    <string name="getRealTime">Récupération des horaires en cours.</string>
+
+    <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau Le Met' (%1$d secondes).</string>
+
+
+    <string name="messageStarEnRetard">Les données des horaires ne sont plus valides, soit vous n\'avez pas mis à jour l\'application, soit le Le Met' n\'a pas encore fournit les horaires, et je n\'ai donc pas pu les intégrer…</string>
 </resources>

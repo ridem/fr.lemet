@@ -82,7 +82,7 @@ public class ListStationsFavoris extends BaseActivity.BaseListActivity implement
 
         listView.setTextFilterEnabled(true);
         registerForContextMenu(listView);
-		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogRequeteVeloStar), true) {
+		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogAPropos), true) {
             @Override
             protected void myDoBackground() throws ErreurReseau {
                 List<VeloFavori> velosFavoris = TransportsMetzApplication.getDataBaseHelper()
@@ -118,7 +118,7 @@ public class ListStationsFavoris extends BaseActivity.BaseListActivity implement
 
 	@Override
 	public void refresh() {
-		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogRequeteVeloStar), true) {
+		new TacheAvecProgressDialog<Void, Void, Void>(this, getString(R.string.dialogAPropos), true) {
 			@Override
 			protected void myDoBackground() throws ErreurReseau {
 				List<VeloFavori> velosFavoris = TransportsMetzApplication.getDataBaseHelper()

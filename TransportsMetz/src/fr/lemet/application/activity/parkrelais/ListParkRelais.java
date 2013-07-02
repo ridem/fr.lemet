@@ -34,7 +34,7 @@ public class ListParkRelais extends AbstractListParkings<ParkRelai> {
 
 	@Override
 	protected int getDialogueRequete() {
-		return R.string.dialogRequeteParkRelais;
+		return R.string.dialogAPropos;
 	}
 
 	@Override

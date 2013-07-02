@@ -56,7 +56,7 @@ public class ListAlerts extends ListFragment {
 		lv.setCacheColorHint(Color.TRANSPARENT);
 		setListAdapter(new AlertAdapter(getActivity(), alerts));
 		Alert alertChargement = new Alert();
-		alertChargement.title = getString(R.string.dialogRequeteAlerts);
+		alertChargement.title = getString(R.string.dialogAPropos);
 		alerts.add(alertChargement);
 		new AsyncTask<Void, Void, Void>() {
 
