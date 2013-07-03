@@ -1,9 +1,5 @@
 package fr.lemet.transportscommun.activity.commun;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -32,7 +28,10 @@ import com.ubikod.capptain.android.sdk.activity.CapptainMapActivity;
 import com.ubikod.capptain.android.sdk.activity.CapptainPreferenceActivity;
 import com.ubikod.capptain.android.sdk.activity.CapptainTabActivity;
 
-import fr.lemet.transportscommun.R;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.R;
 import fr.lemet.transportscommun.activity.AccueilActivity;
@@ -111,6 +110,10 @@ public class BaseActivity {
 		protected void onCreate(Bundle savedInstanceState) {
 			AbstractTransportsApplication.majTheme(this);
 			super.onCreate(savedInstanceState);
+
+
+
+
 		}
 
 		@Override

@@ -3,6 +3,6 @@
     package="fr.lemet.transportscommun" >
 
     <uses-sdk android:minSdkVersion="4"
-              android:targetSdkVersion="11"/>
+              android:targetSdkVersion="15"/>
 
 </manifest>

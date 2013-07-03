@@ -1,6 +1,8 @@
 package fr.lemet.transportscommun.activity.bus;
 
+import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -8,9 +10,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +40,9 @@ public abstract class AbstractArretOnMap extends BaseActivity.BaseMapActivity {
 
 	protected abstract void setupActionBar();
     private GoogleMap mMap;
+    private Context mContext;
+    private List<ArretFavori> arretFavoris = new ArrayList<ArretFavori>();
+    //private ArrayList<OverlayItem> mOverlays = new ArrayList<OverlayItem>();
 	/**
 	 * Called when the activity is first created.
 	 */
@@ -83,7 +92,9 @@ public abstract class AbstractArretOnMap extends BaseActivity.BaseMapActivity {
 		double maxLatitude = Double.MIN_VALUE;
 		double minLongitude = Double.MAX_VALUE;
 		double maxLongitude = Double.MIN_VALUE;
-
+        PolylineOptions rectOptions = new PolylineOptions();
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.anchor(0,1);
 		while (cursor.moveToNext()) {
 			String id = cursor.getString(cursor.getColumnIndex("_id"));
 			String nom = cursor.getString(cursor.getColumnIndex("arretName"));
@@ -114,17 +125,30 @@ public abstract class AbstractArretOnMap extends BaseActivity.BaseMapActivity {
 			arretFavori.nomLong = myLigne.nomLong;
 			arretFavori.arretId = id;
 			arretFavori.macroDirection = macroDirection;
+            arretFavoris.add(arretFavori);
+            // Instantiates a new Polyline object and adds points to define a rectangle
 
-            mMap.addMarker(new MarkerOptions()
+            if (macroDirection == 1) {
+                rectOptions.add(new LatLng(latitude, longitude))
+                        .width(20)
+                        .color(Color.argb(200,100,100,100))
+                        .geodesic(true);
+            }
+             //.color(Color.rgb(179,46,116))
+
+            mMap.addMarker(markerOptions
                     .position(new LatLng(latitude, longitude))
-                    .title(nom + " -> " + direction))  ;
+                    .title(nom)
+                    .snippet("Direction " + direction)
+                    .icon(BitmapDescriptorFactory.fromResource(IconeLigne.getMarkeeResource((myLigne.nomCourt)))));
 
 
                     //.icon(BitmapDescriptorFactory.fromResource(IconeLigne.getMarkeeResource(myLigne.nomCourt))));
 
 			//itemizedoverlay.addOverlay(overlayitem, arretFavori);
 		}
-		cursor.close();
+        Polyline polyline = mMap.addPolyline(rectOptions);
+		//cursor.close();
         System.out.println(maxLatitude);
         System.out.println(minLatitude);
         System.out.println(maxLongitude);
@@ -167,7 +191,13 @@ public abstract class AbstractArretOnMap extends BaseActivity.BaseMapActivity {
 		//myLocationOverlay.disableMyLocation();
 		super.onPause();
 	}
-
+    protected void onInfoWindowClick(Marker marker){
+/*        marker.getId();
+        Intent intent = new Intent(mContext, AbstractTransportsApplication.getDonnesSpecifiques()
+                .getDetailArretClass());
+        intent.putExtra("favori", favori);
+        mContext.startActivity(intent);*/
+    }
 	@Override
 	protected boolean isRouteDisplayed() {
 		return false;

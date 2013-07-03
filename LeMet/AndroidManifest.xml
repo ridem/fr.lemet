@@ -19,7 +19,7 @@
           android:versionName="1.0.0">
     
     <uses-sdk android:minSdkVersion="4"
-              android:targetSdkVersion="12"/>
+              android:targetSdkVersion="15"/>
 
     <permission android:name="fr.lemet.application.permission.MAPS_RECEIVE"
                 android:protectionLevel="signature"/>
