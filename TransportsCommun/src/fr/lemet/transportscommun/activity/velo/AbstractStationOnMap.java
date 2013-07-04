@@ -44,7 +44,7 @@ public abstract class AbstractStationOnMap extends BaseMapActivity {
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * BaseActivity.BaseMapActivity#
+	 * Ba seActivity.BaseMapActivity#
 	 * onCreate(android.os.Bundle)
 	 */
 	@SuppressWarnings("unchecked")

@@ -28,9 +28,7 @@ import android.widget.Button;
 import fr.lemet.application.R;
 import fr.lemet.application.activity.bus.BusMetz;
 import fr.lemet.application.activity.bus.ListArretByPosition;
-import fr.lemet.application.activity.itineraires.ItineraireRequete;
 import fr.lemet.application.activity.plans.PlanReseau;
-import fr.lemet.application.activity.plans.PlansLignes;
 import fr.lemet.application.application.TransportsMetzApplication;
 import fr.lemet.transportscommun.util.Theme;
 
@@ -75,7 +73,7 @@ public class DashboardFragment extends Fragment {
         B4.setTypeface(font);
         B4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), PlansLignes.class));
+                //startActivity(new Intent(getActivity(), PlansLignes.class));
             }
         });
 
@@ -83,7 +81,7 @@ public class DashboardFragment extends Fragment {
         B5.setTypeface(font);
         B5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), ItineraireRequete.class));
+               // startActivity(new Intent(getActivity(), ItineraireRequete.class));
             }
         });
 

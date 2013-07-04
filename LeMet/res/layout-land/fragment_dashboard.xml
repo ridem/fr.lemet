@@ -1,0 +1,136 @@
+<!--
+  Copyright 2011 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+
+
+<!--<fr.lemet.transportscommun.widget.DashboardLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <Button android:id="@+id/home_btn_bus"
+        style="@style/DashboardButton"
+        android:text="@string/btn_bus"
+        android:drawableTop="@drawable/btn_bus_default"
+    />
+
+    <Button android:id="@+id/home_btn_bus_gps"
+        style="@style/DashboardButton"
+        android:text="@string/btn_bus_gps"
+        android:drawableTop="@drawable/btn_bus_gps_default" />
+
+    <Button android:id="@+id/home_btn_carte"
+        style="@style/DashboardButton"
+        android:text="@string/btn_carte"
+        android:drawableTop="@drawable/ic_title_plan" />
+
+    <Button android:id="@+id/home_btn_itineraires"
+            style="@style/DashboardButton"
+            android:text="@string/btn_itineraires"
+            android:drawableTop="@drawable/btn_itineraires_default" />
+
+    <Button android:id="@+id/home_btn_parking"
+            style="@style/DashboardButton"
+            android:text="@string/btn_planslignes"
+            android:drawableTop="@drawable/ic_contact" />
+
+    <Button android:id="@+id/home_btn_alert"
+            style="@style/DashboardButton"
+            android:text="@string/btn_alert"
+            android:drawableTop="@drawable/btn_alert_default" />
+</fr.lemet.transportscommun.widget.DashboardLayout>-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true" >
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+            <Button android:id="@+id/home_btn_bus"
+                    style="@style/dashboard_button"
+                    android:text="@string/btn_bus"
+                    android:drawableTop="@drawable/btn_bus_default"
+                    />
+
+            <Space
+                    android:layout_width="20px"
+                    android:layout_height="fill_parent"
+                    />
+
+            <Button android:id="@+id/home_btn_bus_gps"
+                    style="@style/dashboard_button"
+                    android:text="@string/btn_bus_gps"
+                    android:drawableTop="@drawable/btn_bus_gps_default" />
+
+            <Space
+                    android:layout_width="20px"
+                    android:layout_height="fill_parent"
+                    />
+
+            <Button android:id="@+id/home_btn_carte"
+                    style="@style/dashboard_button"
+                    android:text="@string/btn_carte"
+                    android:drawableTop="@drawable/ic_title_plan" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            <Button android:id="@+id/home_btn_itineraires"
+                    style="@style/dashboard_button"
+                    android:text="@string/btn_itineraires"
+                    android:drawableTop="@drawable/btn_itineraires_default" />
+
+            <Space
+                    android:layout_width="20px"
+                    android:layout_height="fill_parent"
+                    />
+
+            <Button android:id="@+id/home_btn_parking"
+                    style="@style/dashboard_button"
+                    android:text="@string/btn_planslignes"
+                    android:drawableTop="@drawable/ic_contact" />
+
+            <Space
+                    android:layout_width="20px"
+                    android:layout_height="fill_parent"
+                    />
+
+            <Button android:id="@+id/home_btn_alert"
+                    style="@style/dashboard_button"
+                    android:text="@string/btn_alert"
+                    android:drawableTop="@drawable/btn_alert_default" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
