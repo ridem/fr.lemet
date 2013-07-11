@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_margin="20dip"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:typeface="sans"/>
 
     <ProgressBar
         android:id="@+id/loadingBar"

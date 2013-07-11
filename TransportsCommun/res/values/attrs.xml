@@ -9,5 +9,10 @@
         <attr name="actionbarCompatTextStyle" format="reference" />
         <attr name="textHeaderMaxLines" format="integer" />
         <attr name="trackAbstractMaxLines" format="integer" />
+
+    </declare-styleable>
+
+    <declare-styleable name="TypefaceTextView">
+        <attr name="typeface" format="string" required="true"/>
     </declare-styleable>
 </resources>

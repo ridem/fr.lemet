@@ -29,7 +29,8 @@
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
         android:layout_marginLeft="5dip"
-        android:textSize="20dip" />
+        android:textSize="20dip"
+        android:typeface="sans"/>
 
     <TextView
         android:id="@+id/detailArret_tempsRestant"
@@ -40,7 +41,8 @@
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
         android:layout_marginRight="5dip"
-        android:textSize="20dip" />
+        android:textSize="20dip"
+        android:typeface="sans"/>
 
     <TextView
         android:id="@id/detailArret_directionTrajet"
@@ -53,6 +55,7 @@
         android:paddingBottom="10dip"
         android:gravity="center_vertical|left"
         android:textSize="14dip"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:typeface="sans"/>
 
 </RelativeLayout>

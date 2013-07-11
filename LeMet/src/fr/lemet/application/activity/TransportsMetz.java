@@ -17,6 +17,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
@@ -27,6 +28,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
 import java.util.Date;
 
 import fr.lemet.application.R;
@@ -54,6 +56,7 @@ public class TransportsMetz extends AccueilActivity {
 		setContentView(R.layout.main);
 		getActivityHelper().setupActionBar(R.menu.accueil_menu_items, R.menu.holo_accueil_menu_items);
 		verifierUpgrade();
+        this.setDefaultFont();
 	}
 
 	@Override
@@ -74,7 +77,10 @@ public class TransportsMetz extends AccueilActivity {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			View view = LayoutInflater.from(this).inflate(R.layout.infoapropos, null);
 			TextView textView = (TextView) view.findViewById(R.id.textAPropos);
-			if (UIUtils.isHoneycomb()) {
+
+            Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Lato-Reg.ttf");
+            textView.setTypeface(font);
+            if (UIUtils.isHoneycomb()) {
 				textView.setTextColor(TransportsMetzApplication.getTextColor(this));
 			}
 			Spanned spanned = Html.fromHtml(getString(R.string.dialogAPropos));
@@ -84,6 +90,7 @@ public class TransportsMetz extends AccueilActivity {
 			builder.setTitle(getString(R.string.titleTransportsMetz,
 					Version.getVersionCourante(getApplicationContext())));
 			builder.setCancelable(false);
+
 			builder.setNeutralButton(getString(R.string.Terminer), new TransportsMetz.TerminerClickListener());
 			return builder.create();
 		}
@@ -256,4 +263,41 @@ public class TransportsMetz extends AccueilActivity {
 		intent.putExtra("operation", LoadingActivity.OPERATION_LOAD_ALL_LINES);
 		startActivity(intent);
 	}
+
+    public void setDefaultFont() {
+        try {
+            final Typeface bold = Typeface.createFromAsset(getAssets(), "fonts/Lato-Bol.ttf");
+            final Typeface italic = Typeface.createFromAsset(getAssets(), "fonts/Lato-RegIta.ttf");
+            final Typeface boldItalic = Typeface.createFromAsset(getAssets(), "fonts/Lato-BolIta.ttf");
+            final Typeface regular = Typeface.createFromAsset(getAssets(),"fonts/Lato-Reg.ttf");
+
+
+
+            Field DEFAULT = Typeface.class.getDeclaredField("DEFAULT");
+            DEFAULT.setAccessible(true);
+            DEFAULT.set(null, regular);
+
+            Field DEFAULT_BOLD = Typeface.class.getDeclaredField("DEFAULT_BOLD");
+            DEFAULT_BOLD.setAccessible(true);
+            DEFAULT_BOLD.set(null, bold);
+
+            Field SANS_SERIF = Typeface.class.getDeclaredField("SANS_SERIF");
+            SANS_SERIF.setAccessible(true);
+            SANS_SERIF.set(null, regular);
+
+            Field sDefaults = Typeface.class.getDeclaredField("sDefaults");
+            sDefaults.setAccessible(true);
+            sDefaults.set(null, new Typeface[]{
+                    regular, bold, italic, boldItalic
+            });
+
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (Throwable e) {
+            //cannot crash app if there is a failure with overriding the default font!
+            e.printStackTrace();
+        }
+    }
 }

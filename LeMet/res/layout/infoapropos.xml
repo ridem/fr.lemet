@@ -23,5 +23,6 @@
               android:layout_height="wrap_content"
               android:textSize="16dip"
               android:padding="5dip"
-              android:textColor="#FFFFFF"/>
+              android:textColor="#FFFFFF"
+              android:typeface="sans"/>
 </ScrollView>

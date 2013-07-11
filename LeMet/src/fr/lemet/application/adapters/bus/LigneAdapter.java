@@ -44,7 +44,7 @@ public class LigneAdapter extends BaseAdapter {
     public LigneAdapter(Context context, List<Ligne> lignes) throws KeolisException {
         mInflater = LayoutInflater.from(context);
         this.lignes = lignes;
-        font = Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Reg.ttf");
+        //font = Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Reg.ttf");
     }
 
     public int getCount() {
@@ -67,7 +67,7 @@ public class LigneAdapter extends BaseAdapter {
             holder = new LigneAdapter.ViewHolder();
             holder.iconeLigne = (ImageView) convertView1.findViewById(R.id.iconeLigne);
             holder.nomLong = (TextView) convertView1.findViewById(R.id.nomLong);
-            holder.nomLong.setTypeface(font);
+            //holder.nomLong.setTypeface(font);
             convertView1.setTag(holder);
         } else {
             holder = (LigneAdapter.ViewHolder) convertView1.getTag();

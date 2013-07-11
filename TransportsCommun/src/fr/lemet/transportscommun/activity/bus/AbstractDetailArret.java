@@ -1,11 +1,5 @@
 package fr.lemet.transportscommun.activity.bus;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -32,11 +26,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import fr.lemet.transportscommun.R;
-import fr.lemet.transportscommun.adapters.bus.AbstractDetailArretAdapter;
-import fr.lemet.transportscommun.donnees.modele.ArretFavori;
-import fr.lemet.transportscommun.donnees.modele.Notification;
-import fr.lemet.transportscommun.util.TacheAvecProgressDialog;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.R;
 import fr.lemet.transportscommun.activity.commun.BaseActivity.BaseFragmentActivity;
@@ -532,22 +527,34 @@ public abstract class AbstractDetailArret extends BaseListActivity {
 		int heures = tempsRestant / 60;
 		int minutes = tempsRestant - heures * 60;
 		boolean tempsAjoute = false;
-		if (heures > 0) {
-			stringBuilder.append(heures);
-			stringBuilder.append(' ');
-			stringBuilder.append(this.getString(R.string.heures));
-			stringBuilder.append(' ');
-			tempsAjoute = true;
+		if (heures >= 2) {
+            stringBuilder.append(heures);
+            stringBuilder.append(' ');
+            stringBuilder.append(this.getString(R.string.heures));
+            stringBuilder.append(' ');
+            tempsAjoute = true;
 		}
-		if (minutes > 0) {
+        else if (heures==1) {
+            stringBuilder.append(heures);
+            stringBuilder.append(' ');
+            stringBuilder.append(this.getString(R.string.heure));
+            stringBuilder.append(' ');
+            tempsAjoute = true;
+        }
+		if (minutes >= 2) {
 			stringBuilder.append(minutes);
 			stringBuilder.append(' ');
 			stringBuilder.append(this.getString(R.string.minutes));
 			tempsAjoute = true;
-		}
+		} else if (minutes == 1){
+            stringBuilder.append(minutes);
+            stringBuilder.append(' ');
+            stringBuilder.append(this.getString(R.string.minute));
+            tempsAjoute = true;
+        }
 		if (!tempsAjoute) {
 			stringBuilder.append("0 ");
-			stringBuilder.append(this.getString(R.string.minutes));
+			stringBuilder.append(this.getString(R.string.minute));
 		}
 		return stringBuilder.toString();
 	}

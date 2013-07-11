@@ -35,6 +35,7 @@
               android:layout_height="50dip"
               android:textSize="16dip"
               android:gravity="center_vertical|fill_horizontal"
+              android:typeface="sans"
             />
 
 </LinearLayout>

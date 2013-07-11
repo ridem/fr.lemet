@@ -21,9 +21,11 @@ public class PlanReseau extends BaseActivity.BaseSimpleActivity {
         WebSettings planSettings = planweb.getSettings();
         planSettings.setSupportZoom(true);
         planSettings.setBuiltInZoomControls(true);
+        //planSettings.setLoadsImagesAutomatically(true);
         //planSettings.setLoadWithOverviewMode(true);
         planSettings.setUseWideViewPort(true);
         //planSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
-        planweb.loadUrl("file:///android_asset/tcrm.jpg");
+        //planweb.loadUrl("file:///android_asset/tcrm.jpg");
+        planweb.loadUrl("file:///android_asset/plan/plan.html");
 }
 }

@@ -45,7 +45,8 @@
               android:textSize="20dip"
               android:gravity="center_vertical|left"
             android:layout_toLeftOf="@id/isfavori"
-               android:layout_alignParentLeft="true"/>
+               android:layout_alignParentLeft="true"
+               android:typeface="sans"/>
 
     <ImageView android:id="@+id/imageCorrespondance"
                android:layout_width="wrap_content"
@@ -68,7 +69,8 @@
               android:gravity="center_vertical|left"
               android:layout_below="@id/nomArret"
               android:layout_toLeftOf="@id/imageCorrespondance"
-               android:layout_alignParentLeft="true"/>
+               android:layout_alignParentLeft="true"
+               android:typeface="sans"/>
     <LinearLayout android:id="@+id/detailCorrespondance"
                   android:visibility="invisible"
                   android:layout_width="fill_parent"

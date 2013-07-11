@@ -1,7 +1,5 @@
 package fr.lemet.transportscommun.adapters.bus;
 
-import java.util.List;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -9,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import java.util.List;
+
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.R;
 import fr.lemet.transportscommun.donnees.modele.DetailArretConteneur;
@@ -134,19 +135,34 @@ public abstract class AbstractDetailArretAdapter extends BaseAdapter {
 			int heures = tempsEnMinutes / 60;
 			int minutes = tempsEnMinutes - heures * 60;
 			boolean tempsAjoute = false;
-			if (heures > 0) {
+            if(heures>1){
+                stringBuilder.append(heures);
+                stringBuilder.append(' ');
+                stringBuilder.append(myContext.getString(R.string.heures));
+                stringBuilder.append(' ');
+                tempsAjoute = true;
+            }
+
+			else if (heures == 1) {
 				stringBuilder.append(heures);
 				stringBuilder.append(' ');
-				stringBuilder.append(myContext.getString(R.string.heures));
+				stringBuilder.append(myContext.getString(R.string.heure));
 				stringBuilder.append(' ');
 				tempsAjoute = true;
 			}
-			if (minutes > 0) {
+			if (minutes > 1) {
 				stringBuilder.append(minutes);
 				stringBuilder.append(' ');
 				stringBuilder.append(myContext.getString(R.string.minutes));
 				tempsAjoute = true;
 			}
+            else if(minutes==1){
+                stringBuilder.append(minutes);
+                stringBuilder.append(' ');
+                stringBuilder.append(myContext.getString(R.string.minute));
+                tempsAjoute = true;
+
+            }
 			if (!tempsAjoute) {
 				stringBuilder.append("0 ");
 				stringBuilder.append(myContext.getString(R.string.minutes));

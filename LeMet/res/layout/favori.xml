@@ -37,7 +37,8 @@
               android:layout_height="38dip"
               android:textSize="20dip"
               android:gravity="center_vertical|left"
-              android:layout_toRightOf="@id/iconeLigne"/>
+              android:layout_toRightOf="@id/iconeLigne"
+              android:typeface="sans" />
 
     <TextView android:id="@+id/tempsRestant"
               android:paddingRight="5dip"
@@ -49,7 +50,8 @@
               android:textSize="18dip"
               android:gravity="center_vertical|right"
               android:layout_toRightOf="@id/nomArret"
-              android:layout_alignParentRight="true"/>
+              android:layout_alignParentRight="true"
+              android:typeface="sans"/>
 
     <ImageView android:id="@+id/moveUp"
                android:layout_width="39dip"
@@ -79,6 +81,7 @@
               android:gravity="center_vertical|left"
               android:layout_alignParentLeft="true"
               android:layout_below="@id/iconeLigne"
-              android:layout_toLeftOf="@id/moveDown"/>
+              android:layout_toLeftOf="@id/moveDown"
+              android:typeface="sans"/>
 
 </RelativeLayout>

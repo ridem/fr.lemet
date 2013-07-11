@@ -45,13 +45,22 @@
             android:layout_height="50dip"
             android:layout_toRightOf="@id/iconeLigne" >
 
-            <TextView
+            <!--<TextView
                 android:id="@id/nomLong"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical|left"
                 android:padding="5dip"
-                android:textSize="20dip" />
+                android:textSize="20dip" /> -->
+            <TextView
+                    android:id="@id/nomLong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|left"
+                    android:padding="5dip"
+                    android:textSize="20dip"
+                    android:typeface="sans"
+                    />
         </HorizontalScrollView>
 
         <ImageView
@@ -94,7 +103,8 @@
                 android:paddingLeft="5dip"
                 android:paddingRight="5dip"
                 android:paddingTop="5dip"
-                android:textSize="20dip" />
+                android:textSize="20dip"
+                android:typeface="sans"/>
         </HorizontalScrollView>
 
         <ScrollView
@@ -127,7 +137,8 @@
             android:gravity="center"
             android:padding="10dip"
             android:text="@string/detailarret_empty"
-            android:textSize="18dip" />
+            android:textSize="18dip"
+            android:typeface="sans"/>
     </RelativeLayout>
 
 </LinearLayout>

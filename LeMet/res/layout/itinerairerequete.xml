@@ -20,7 +20,7 @@
 	android:layout_height="fill_parent">
 	<include layout="@layout/actionbar"/>
 	<ScrollView android:orientation="vertical"
-		android:layout_width="fill_parent" android:layout_height="fill_parent">
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
 		<RelativeLayout android:orientation="vertical"
 		                android:layout_width="fill_parent"
 		                android:layout_height="wrap_content"
@@ -51,7 +51,8 @@
 		              android:paddingTop="10dip"
 		              android:paddingLeft="5dip"
 		              android:text="@string/textAdresseDepart"
-		              android:layout_below="@id/dateItineraire"/>
+		              android:layout_below="@id/dateItineraire"
+                      android:typeface="sans"/>
 		              
 		    <AutoCompleteTextView android:id="@+id/adresseDepart"
 		              android:layout_height="wrap_content"
@@ -60,13 +61,16 @@
 		              android:imeOptions="normal"
 		              android:completionThreshold="6"
 		              android:hint="@string/hint_positionCourante"
-		              android:layout_below="@id/textAdresseDepart"/>
+		              android:layout_below="@id/textAdresseDepart"
+                      android:typeface="sans"/>
 		    <TextView android:id="@+id/exempleAdresseDepart"
 		              android:layout_height="wrap_content"
 		              android:layout_width="fill_parent"
 		              android:textSize="12dip"
 		              android:text="@string/exempleAdresse"
-		              android:layout_below="@id/adresseDepart"/>
+		              android:layout_below="@id/adresseDepart"
+                      android:layout_marginLeft="5dp"
+                      android:typeface="sans"/>
 		    <TextView android:id="@+id/textAdresseArrivee"
 		              android:layout_height="wrap_content"
 		              android:layout_width="fill_parent"
@@ -82,22 +86,35 @@
 		              android:imeOptions="normal"
 		              android:completionThreshold="6"
 		              android:hint="@string/hint_positionCourante"
-		              android:layout_below="@id/textAdresseArrivee"/>
+		              android:layout_below="@id/textAdresseArrivee"
+                      android:typeface="sans"/>
 		    <TextView android:id="@+id/exempleAdresseArrivee"
 		              android:layout_height="wrap_content"
 		              android:layout_width="fill_parent"
 		              android:textSize="12dip"
 		              android:text="@string/exempleAdresse"
-		              android:layout_below="@id/adresseArrivee"/>
-		    <Button android:id="@+id/itineraireTermine"
-		            android:layout_height="wrap_content"
-		            android:layout_width="wrap_content"
-		            android:text="@string/Terminer"
-		            android:gravity="center"
-		            android:textSize="18dip"
-		            android:layout_marginTop="20dip"
-		            android:layout_marginLeft="30dip"
-		            android:layout_below="@id/exempleAdresseArrivee"/>
-		</RelativeLayout>
+		              android:layout_below="@id/adresseArrivee"
+                      android:layout_marginLeft="5dp"
+                      android:typeface="sans"/>
+        </RelativeLayout>
 	</ScrollView>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp">
+
+        <Button android:id="@+id/itineraireTermine"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/rechercher_itineraire"
+                android:gravity="center"
+                android:textSize="18dip"
+android:layout_below="@+id/exempleAdresseArrivee"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="10dp"
+android:typeface="sans"
+android:layout_gravity="right"/>
+    </LinearLayout>
 </LinearLayout>

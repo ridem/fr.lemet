@@ -69,7 +69,7 @@ public class TransportsMetzApplication extends AbstractTransportsApplication {
 
 			@Override
 			public String getApplicationName() {
-				return "Le Met\'";
+				return "LE MET\'";
 			}
 
 			@Override

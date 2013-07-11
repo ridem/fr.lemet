@@ -26,7 +26,8 @@
               android:layout_height="50dip"
               android:textSize="20dip"
               android:gravity="center_vertical|left"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true"
+            android:typeface="sans"/>
 
     <TextView android:id="@+id/detailTrajet_heurePassage"
               android:padding="5dip"
@@ -34,5 +35,6 @@
               android:layout_height="50dip"
               android:textSize="20dip"
               android:gravity="center_vertical|right"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:typeface="sans"/>
 </RelativeLayout>

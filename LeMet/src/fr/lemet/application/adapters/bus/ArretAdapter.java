@@ -17,6 +17,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,7 +53,7 @@ public class ArretAdapter extends CursorAdapter {
     private final Ligne ligne;
     private final ArretFavori favori;
     private final Activity activity;
-
+    public Typeface font;
     private static final double DISTANCE_RECHERCHE_METRE = 1000.0;
     private static final double DEGREE_LATITUDE_EN_METRES = 111192.62;
     private static final double DISTANCE_LAT_IN_DEGREE = DISTANCE_RECHERCHE_METRE / DEGREE_LATITUDE_EN_METRES;
@@ -75,6 +76,7 @@ public class ArretAdapter extends CursorAdapter {
         arretIdCol = cursor.getColumnIndex("_id");
         macroDirectionCol = cursor.getColumnIndex("macroDirection");
         accessibleCol = cursor.getColumnIndex("accessible");
+        //font = Typeface.createFromAsset(activity.getBaseContext().getAssets(), "fonts/Lato-Reg.ttf");
     }
 
     private final LayoutInflater mInflater;
@@ -100,7 +102,9 @@ public class ArretAdapter extends CursorAdapter {
         View view = inflater.inflate(R.layout.arret, parent, false);
         ArretAdapter.ViewHolder holder = new ArretAdapter.ViewHolder();
         holder.nomArret = (TextView) view.findViewById(R.id.nomArret);
+        //holder.nomArret.setTypeface(font);
         holder.directionArret = (TextView) view.findViewById(R.id.directionArret);
+        //holder.directionArret.setTypeface(font);
         holder.isFavori = (ImageView) view.findViewById(R.id.isfavori);
         holder.correspondance = (ImageView) view.findViewById(R.id.imageCorrespondance);
         holder.detailCorrespondance = (LinearLayout) view.findViewById(R.id.detailCorrespondance);
@@ -268,8 +272,11 @@ public class ArretAdapter extends CursorAdapter {
         ArretAdapter.RelativeLayoutHolder holder = new ArretAdapter.RelativeLayoutHolder();
         holder.iconeLigne = (ImageView) relativeLayout.findViewById(R.id.iconeLigne);
         holder.arretDirection = (TextView) relativeLayout.findViewById(R.id.arretgps_direction);
+        //holder.arretDirection.setTypeface(font);
         holder.nomArret = (TextView) relativeLayout.findViewById(R.id.arretgps_nomArret);
+        //holder.nomArret.setTypeface(font);
         holder.distance = (TextView) relativeLayout.findViewById(R.id.arretgps_distance);
+        //holder.distance.setTypeface(font);
         relativeLayout.setTag(holder);
         return relativeLayout;
     }

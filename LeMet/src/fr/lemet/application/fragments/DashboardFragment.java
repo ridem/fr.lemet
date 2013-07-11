@@ -17,17 +17,19 @@
 package fr.lemet.application.fragments;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import fr.lemet.application.R;
+import fr.lemet.application.activity.alerts.Perturbations;
 import fr.lemet.application.activity.bus.BusMetz;
 import fr.lemet.application.activity.bus.ListArretByPosition;
+import fr.lemet.application.activity.itineraires.ItineraireRequete;
 import fr.lemet.application.activity.plans.PlanReseau;
 import fr.lemet.application.application.TransportsMetzApplication;
 import fr.lemet.transportscommun.util.Theme;
@@ -40,13 +42,13 @@ public class DashboardFragment extends Fragment {
 		if (TransportsMetzApplication.getTheme(getActivity()) == Theme.NOIR) {
 			root = inflater.inflate(R.layout.fragment_dashboard_noir, container);
 		} else {
-			root = inflater.inflate(R.layout.fragment_dashboard, container);
+			root = inflater.inflate(R.layout.icon_dashboard, container);
 		}
-        Typeface font = Typeface.createFromAsset(root.getContext().getAssets(), "fonts/Lato-Reg.ttf");
+        //Typeface font = Typeface.createFromAsset(root.getContext().getAssets(), "fonts/Lato-Reg.ttf");
 
 
-        Button B1 = (Button) root.findViewById(R.id.home_btn_bus);
-        B1.setTypeface(font);
+        ImageButton B1 = (ImageButton) root.findViewById(R.id.home_btn_bus);
+        //B1.setTypeface(font);
 		B1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), BusMetz.class));
@@ -54,7 +56,7 @@ public class DashboardFragment extends Fragment {
         });
 
         Button B2 = (Button) root.findViewById(R.id.home_btn_bus_gps);
-        B2.setTypeface(font);
+        //B2.setTypeface(font);
         B2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), ListArretByPosition.class));
@@ -62,34 +64,34 @@ public class DashboardFragment extends Fragment {
         });
 
         Button B3 = (Button) root.findViewById(R.id.home_btn_carte);
-        B3.setTypeface(font);
+        //B3.setTypeface(font);
         B3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), PlanReseau.class));
             }
         });
 
-        Button B4 = (Button) root.findViewById(R.id.home_btn_parking);
-        B4.setTypeface(font);
-        B4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+        //ImageButton B4 = (ImageButton) root.findViewById(R.id.home_btn_parking);
+        //B4.setTypeface(font);
+        //B4.setOnClickListener(new View.OnClickListener() {
+        //    public void onClick(View view) {
                 //startActivity(new Intent(getActivity(), PlansLignes.class));
-            }
-        });
+        //    }
+        //});
 
-        Button B5 = (Button) root.findViewById(R.id.home_btn_itineraires);
-        B5.setTypeface(font);
+        ImageButton B5 = (ImageButton) root.findViewById(R.id.home_btn_itineraires);
+        //B5.setTypeface(font);
         B5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-               // startActivity(new Intent(getActivity(), ItineraireRequete.class));
+               startActivity(new Intent(getActivity(), ItineraireRequete.class));
             }
         });
 
-        Button B6 = (Button) root.findViewById(R.id.home_btn_alert);
-        B6.setTypeface(font);
+        ImageButton B6 = (ImageButton) root.findViewById(R.id.home_btn_alert);
+        //B6.setTypeface(font);
         B6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-               // startActivity(new Intent(getActivity(), TabAlertes.class));
+               startActivity(new Intent(getActivity(), Perturbations.class));
             }
         });
 

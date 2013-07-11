@@ -14,21 +14,22 @@
   -->
 <resources>
     <!-- Nom de l'application -->
-    <string name="app_name">Le Met\'</string>
+    <string name="app_name">LE MET\'</string>
 
-    <string name="widget11_name">Le Met\' 1x1</string>
-    <string name="widget21_name">Le Met\' 2x1</string>
-    <string name="widget22_name">Le Met\' 2x2</string>
-    <string name="widgetlowres_name">Le Met\' 2x2 LowRes</string>
+    <string name="widget11_name">LE MET\' 1x1</string>
+    <string name="widget21_name">LE MET\' 2x1</string>
+    <string name="widget22_name">LE MET\' 2x2</string>
+    <string name="widgetlowres_name">LE MET\' 2x2 LowRes</string>
     <!-- Messages -->
-    <string name="titleTransportsMetz">Bienvenue dans l\'application Le Met\' %1$s</string>
-    <string name="majDispo">Une mise à jour des données Le Met\' est disponible, voulez-vous l\'effectuer maintenant?
+    <string name="titleTransportsMetz">Application LE MET\', version %1$s</string>
+    <string name="majDispo">Une mise à jour des données LE MET\' est disponible, voulez-vous l\'effectuer maintenant?
         Attention, vous devrez charger à
         nouveau les horaires que vous avez déjà chargés.
     </string>
-    <string name="infoChargementGtfs">Chargement des données Le Met\'.</string>
+    <string name="infoChargementGtfs">Chargement des données LE MET\'.</string>
     <string name="dialogRequeteTwitter">Interrogation de Twitter.</string>
-    <string name="dialogAPropos">Le Met\', préversion.
+    <string name="dialogAPropos">LE MET\', préversion.
+        Ce programme est diffusé sous licence GPL.
     </string>
     <string name="detailarret_empty">Pas de bus à la date sélectionnée, veuillez changer la date</string>
     <string name="itineraires_empty">Aucun itinéraire n\'a été trouvé pour ces adresses.</string>
@@ -50,8 +51,7 @@
     </string>
     <string name="chargementLigneFavori">\nChargement de la ligne %1$s dont vous avez des favoris.</string>
     <string name="loadAllLineAlert">Attention, charger les données de toutes les lignes peut prendre plusieurs minutes
-        (2 minutes sur un Nexus One),
-        et occupera environ 8,5Mo de données, mais vous permettra d\'accéder à tous les horaires de manière instantanée.
+        et occupera environ 5Mo de données, mais vous permettra d\'accéder à tous les horaires de manière instantanée.
         Êtes-vous sûr de vouloir les charger?
     </string>
     <string name="geocodageAdresseDepart">Geo-codage de l\'adresse de départ</string>
@@ -60,22 +60,22 @@
     <string name="depart">Départ à %1$s</string>
     <string name="arrivee">Arrivée à %1$s</string>
     <!-- Libellés des boutons de la pages d'accueil -->
-    <string name="btn_velo">LE vélo STAR</string>
+    <string name="btn_velo">LE vélo</string>
     <string name="btn_velo_favori">Stations favorites</string>
 
-    <string name="btn_carte">Plans</string>
+    <string name="btn_carte">Plans du réseau</string>
     <string name="btn_planslignes">Contact</string>
 
     <string name="btn_bus">Horaires</string>
     <string name="btn_bus_favori">Arrêts Favoris</string>
     <string name="btn_bus_gps">Arrêts à proximité</string>
-    <string name="btn_alert">Alertes</string>
+    <string name="btn_alert">État du trafic</string>
     <string name="btn_parking">Parcs relais</string>
     <string name="menu_tickets">Points de vente</string>
     <!-- Libellés de menus -->
     <string name="menu_selectDay">Choisir une date</string>
     <string name="menu_refresh">Rafraîchir</string>
-    <string name="menu_apropos">A propos</string>
+    <string name="menu_apropos">À propos</string>
     <string name="menu_carte">Carte</string>
     <string name="menu_loadLines">Charger toutes les lignes</string>
     <string name="btn_itineraires">Itinéraires</string>
@@ -84,6 +84,7 @@
     <string name="widget11_choix">Choisissez un arrêt favori.</string>
     <!-- Génériques -->
     <string name="Terminer">Terminer</string>
+    <string name="rechercher_itineraire">Rechercher l\'itinéraire</string>
     <string name="oui">Oui</string>
     <string name="non">Non</string>
     <string name="prochain">Prochain :</string>
@@ -117,7 +118,7 @@
     <string name="versionDisponible">La version %1$s est disponible!</string>
 
     <string name="menu_share">Partager</string>
-    <string name="shareText">Le Met\', l\'application Android pour vous faciliter les transports à Metz !
+    <string name="shareText">LE MET\', l\'application Android pour vous faciliter les transports à Metz !
     </string>
 
     <string name="notifUpdateOn">Notification pour les mises à jour</string>
@@ -142,8 +143,8 @@
 
     <string name="getRealTime">Récupération des horaires en cours.</string>
 
-    <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau Le Met\' (%1$d secondes).</string>
+    <string name="diffSecondsToHigh">Vous avez plus de 30 secondes d\'écart avec l\'heure du réseau LE MET\' (%1$d secondes).</string>
 
 
-    <string name="messageStarEnRetard">Les données des horaires ne sont plus valides, soit vous n\'avez pas mis à jour l\'application, soit le Le Met\' n\'a pas encore fournit les horaires, et je n\'ai donc pas pu les intégrer…</string>
+    <string name="messageStarEnRetard">Les données des horaires ne sont plus valides, soit vous n\'avez pas mis à jour l\'application, soit le LE MET\' n\'a pas encore fournit les horaires, et je n\'ai donc pas pu les intégrer…</string>
 </resources>

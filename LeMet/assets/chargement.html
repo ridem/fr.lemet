@@ -1,0 +1,110 @@
+<html>
+<body>
+<style>
+html, body {
+height: 100%;
+}
+
+html {
+display: table;
+margin: auto;
+}
+
+body {
+display: table-cell;
+vertical-align: middle;
+}
+
+        #fountainG{
+        position:relative;
+        width:124px;
+        height:15px}
+
+        .fountainG{
+        position:absolute;
+        top:0;
+        background-color:#000000;
+        width:15px;
+        height:15px;
+        -webkit-animation-name:bounce_fountainG;
+        -webkit-animation-duration:0.8s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-direction:linear;
+        -webkit-transform:scale(.3);
+        -webkit-border-radius:10px;
+        }
+
+        #fountainG_1{
+        left:0;
+        -webkit-animation-delay:0.32s;
+        }
+
+        #fountainG_2{
+        left:16px;
+        -webkit-animation-delay:0.4s;
+        }
+
+        #fountainG_3{
+        left:31px;
+        -webkit-animation-delay:0.48s;
+        }
+
+        #fountainG_4{
+        left:47px;
+        -webkit-animation-delay:0.56s;
+        }
+
+        #fountainG_5{
+        left:62px;
+        -webkit-animation-delay:0.64s;
+        }
+
+        #fountainG_6{
+        left:78px;
+        -webkit-animation-delay:0.72s;
+        }
+
+        #fountainG_7{
+        left:93px;
+        -webkit-animation-delay:0.8s;
+        }
+
+        #fountainG_8{
+        left:109px;
+        -webkit-animation-delay:0.88s;
+        }
+
+        @-webkit-keyframes bounce_fountainG{
+        0%{
+        -webkit-transform:scale(1);
+        background-color:#000000;
+        }
+
+        100%{
+        -webkit-transform:scale(.3);
+        background-color:#EEEEEE;
+        }
+
+        }
+
+    </style>
+    <div id="fountainG">
+        <div id="fountainG_1" class="fountainG">
+        </div>
+        <div id="fountainG_2" class="fountainG">
+        </div>
+        <div id="fountainG_3" class="fountainG">
+        </div>
+        <div id="fountainG_4" class="fountainG">
+        </div>
+        <div id="fountainG_5" class="fountainG">
+        </div>
+        <div id="fountainG_6" class="fountainG">
+        </div>
+        <div id="fountainG_7" class="fountainG">
+        </div>
+        <div id="fountainG_8" class="fountainG">
+        </div>
+    </div>
+</body>
+        </html>

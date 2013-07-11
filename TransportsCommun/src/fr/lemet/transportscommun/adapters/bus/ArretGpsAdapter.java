@@ -13,11 +13,9 @@
  */
 package fr.lemet.transportscommun.adapters.bus;
 
-import java.util.Calendar;
-import java.util.List;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +23,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import fr.lemet.transportscommun.R;
-import fr.lemet.transportscommun.donnees.modele.DetailArretConteneur;
-import fr.lemet.transportscommun.donnees.modele.Horaire;
-import fr.lemet.transportscommun.util.Formatteur;
-import fr.lemet.transportscommun.util.IconeLigne;
+import java.util.Calendar;
+import java.util.List;
+
 import fr.lemet.transportscommun.AbstractTransportsApplication;
 import fr.lemet.transportscommun.R;
 import fr.lemet.transportscommun.donnees.modele.Arret;
@@ -42,7 +38,7 @@ import fr.lemet.transportscommun.util.IconeLigne;
  * Adapteur pour les arrets pas positionnement GPS..
  */
 public class ArretGpsAdapter extends ArrayAdapter<Arret> {
-
+    public Typeface font;
     private final List<Arret> arrets;
     private final LayoutInflater inflater;
     private Calendar calendar;
@@ -61,6 +57,7 @@ public class ArretGpsAdapter extends ArrayAdapter<Arret> {
         arrets = objects;
         inflater = LayoutInflater.from(getContext());
         myContext = context;
+        //font = Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Reg.ttf");
     }
 
     private static class ViewHolder {
@@ -84,9 +81,13 @@ public class ArretGpsAdapter extends ArrayAdapter<Arret> {
             holder = new ArretGpsAdapter.ViewHolder();
             holder.iconeLigne = (ImageView) convertView1.findViewById(R.id.iconeLigne);
             holder.arretDirection = (TextView) convertView1.findViewById(R.id.arretgps_direction);
+            //holder.arretDirection.setTypeface(font);
             holder.nomArret = (TextView) convertView1.findViewById(R.id.arretgps_nomArret);
+            //holder.nomArret.setTypeface(font);
             holder.distance = (TextView) convertView1.findViewById(R.id.arretgps_distance);
+            //holder.distance.setTypeface(font);
             holder.tempsRestant = (TextView) convertView1.findViewById(R.id.arretgps_tempsRestant);
+            //holder.tempsRestant.setTypeface(font);
             convertView1.setTag(holder);
         } else {
             holder = (ArretGpsAdapter.ViewHolder) convertView1.getTag();

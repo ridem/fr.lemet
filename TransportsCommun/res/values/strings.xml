@@ -28,7 +28,9 @@
     <string name="erreurReseau">Une erreur de connection a été détectée, veuillez réessayer plus tard.</string>
     <string name="dans">dans</string>
     <string name="heures">heures</string>
+    <string name="heure">heure</string>
     <string name="minutes">minutes</string>
+    <string name="minute">minute</string>
     <string name="miniHeures">h</string>
     <string name="miniMinutes">min</string>
     <string name="tempsRestant">Notification dans %1$s.</string>
