@@ -1,0 +1,74 @@
+id,direction
+1,Le Lac
+2,Republique
+3,Cimetiere De L'est
+4,Place De France
+5,St Eloy
+6,Giraudoux
+7,Lorraine
+8,Hopital Schuman
+9,Oeillets
+10,Pres St Jacques
+11,Deny
+12,Maison Neuve
+13,St Privat
+14,St Julien Fort
+15,Cite U
+17,Saulcy
+16,Scy-chazelles
+19,Cugnot
+18,Le Patis
+21,Mey
+20,Gare Sncf
+23,Vaux Mairie
+22,Coubertin
+25,Grimont
+24,Marronniers
+27,Place D'armes
+26,Moulins
+29,Centre Pompidou
+28,Doliche
+31,En Prille
+30,Felix Marechal
+34,Tanneurs
+35,Stoxey
+32,Queuleu
+33,Borny
+38,11ème D'aviation
+39,Jp Jean
+36,Rimport
+37,Le Quoity
+42,Preville
+43,Aubepine
+40,Valery
+41,Buchoz
+46,Cloutiers
+47,Tournebride
+44,Roosevelt
+45,Chr Mercy
+51,Falogne
+50,Le Goullon
+49,St Pierre
+48,Michelet
+55,Prefecture
+54,Scarpone
+53,Jussy - Ste Ruffine
+52,Chatel St Germain
+59,Enim*
+58,Fort Moselle
+57,Pont De Verdun
+56,St Maximin
+63,Alexandre Fleming
+62,Jeanne D'arc
+61,Centre Commercial
+60,Bld Serot
+68,Villers-l'orme
+69,Tanneries
+70,Glissu
+71,Plappeville
+64,Verlaine
+65,Costes Et Bellonte
+66,Bergson
+67,Serot
+72,Metz-nord Gare
+73,Bernard

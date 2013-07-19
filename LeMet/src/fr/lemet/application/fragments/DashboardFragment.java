@@ -29,7 +29,6 @@ import fr.lemet.application.R;
 import fr.lemet.application.activity.alerts.Perturbations;
 import fr.lemet.application.activity.bus.BusMetz;
 import fr.lemet.application.activity.bus.ListArretByPosition;
-import fr.lemet.application.activity.itineraires.ItineraireRequete;
 import fr.lemet.application.activity.plans.PlanReseau;
 import fr.lemet.application.application.TransportsMetzApplication;
 import fr.lemet.transportscommun.util.Theme;
@@ -55,7 +54,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        Button B2 = (Button) root.findViewById(R.id.home_btn_bus_gps);
+        ImageButton B2 = (ImageButton) root.findViewById(R.id.home_btn_bus_gps);
         //B2.setTypeface(font);
         B2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -83,7 +82,7 @@ public class DashboardFragment extends Fragment {
         //B5.setTypeface(font);
         B5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-               startActivity(new Intent(getActivity(), ItineraireRequete.class));
+               //startActivity(new Intent(getActivity(), ItineraireRequete.class));
             }
         });
 

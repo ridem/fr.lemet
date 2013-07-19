@@ -95,7 +95,8 @@
 		              android:text="@string/exempleAdresse"
 		              android:layout_below="@id/adresseArrivee"
                       android:layout_marginLeft="5dp"
-                      android:typeface="sans"/>
+                      android:typeface="sans"
+                    />
         </RelativeLayout>
 	</ScrollView>
 

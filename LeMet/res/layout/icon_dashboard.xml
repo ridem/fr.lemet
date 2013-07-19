@@ -106,8 +106,8 @@
                 <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/home_btn_contact"
-                        android:src="@drawable/home_contact"
+                        android:id="@+id/home_btn_bus_gps"
+                        android:src="@drawable/home_bus_gps"
                         android:background="#00ffffff"
                         android:paddingRight="15dp"/>
                 <ImageButton
@@ -131,9 +131,9 @@
                 android:layout_gravity="center_horizontal"
                 >
 
-            <Button android:id="@+id/home_btn_bus_gps"
+            <Button android:id="@+id/home_contact"
                     style="@style/dashboard_button"
-                    android:text="@string/btn_bus_gps"
+                    android:text="Nous contacter"
                     android:drawableTop="@drawable/btn_bus_gps_default"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"

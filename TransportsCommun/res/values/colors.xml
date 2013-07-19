@@ -22,7 +22,7 @@
 
     <color name="accent_1">#353535</color>
     <color name="background">#dcd8dc</color>
-    <color name="buttonfocus">#f2edf2</color>
-    <color name="buttonpressed">#f2f2f2</color>
+    <color name="buttonfocus">#deddde</color>
+    <color name="buttonpressed">#deddde</color>
 
 </resources>
